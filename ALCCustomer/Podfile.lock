@@ -1,0 +1,122 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - AlipaySDK-iOS (15.7.4)
+  - CRBoxInputView (1.1.3):
+    - Masonry
+  - FLAnimatedImage (1.0.12)
+  - IQKeyboardManager (6.5.3)
+  - Masonry (1.1.0)
+  - MJExtension (3.2.1)
+  - MJRefresh (3.2.0)
+  - ReactiveObjC (3.1.1)
+  - SDCycleScrollView (1.80):
+    - SDWebImage (>= 5.0.0)
+  - SDWebImage (5.2.5):
+    - SDWebImage/Core (= 5.2.5)
+  - SDWebImage/Core (5.2.5)
+  - SDWebImageFLPlugin (0.3.0):
+    - FLAnimatedImage (>= 1.0.11)
+    - SDWebImage/Core (~> 5.0)
+  - SVProgressHUD (2.2.5)
+  - SwipeBack (1.1.1)
+  - TZImagePickerController (3.2.6)
+  - UMCCommon (7.1.0)
+  - UMCCommonLog (2.0.0)
+  - UMCPush (3.2.4):
+    - UMCCommon
+  - UMCShare/Core (6.9.9):
+    - UMCCommon
+  - UMCShare/Social/ReducedQQ (6.9.9):
+    - UMCCommon
+    - UMCShare/Core
+  - UMCShare/Social/ReducedWeChat (6.9.9):
+    - UMCCommon
+    - UMCShare/Core
+  - WechatOpenSDK (1.8.7.1)
+
+DEPENDENCIES:
+  - AFNetworking
+  - AlipaySDK-iOS
+  - CRBoxInputView
+  - FLAnimatedImage
+  - IQKeyboardManager
+  - Masonry
+  - MJExtension
+  - MJRefresh
+  - ReactiveObjC
+  - SDCycleScrollView
+  - SDWebImage
+  - SDWebImageFLPlugin
+  - SVProgressHUD
+  - SwipeBack
+  - TZImagePickerController
+  - UMCCommon
+  - UMCCommonLog
+  - UMCPush
+  - UMCShare/Social/ReducedQQ
+  - UMCShare/Social/ReducedWeChat
+  - WechatOpenSDK
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - CRBoxInputView
+    - FLAnimatedImage
+    - IQKeyboardManager
+    - Masonry
+    - MJExtension
+    - MJRefresh
+    - ReactiveObjC
+    - SDCycleScrollView
+    - SDWebImage
+    - SDWebImageFLPlugin
+    - SVProgressHUD
+    - SwipeBack
+    - TZImagePickerController
+  trunk:
+    - AlipaySDK-iOS
+    - UMCCommon
+    - UMCCommonLog
+    - UMCPush
+    - UMCShare
+    - WechatOpenSDK
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AlipaySDK-iOS: 8659cdb4403de7e5f26ad8b699864a9cbe53384c
+  CRBoxInputView: 4b823a86a5a8c46e86818d553db591ab072786eb
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  IQKeyboardManager: c2f901164d56807a35788483584d09fa69192e8e
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
+  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
+  SDWebImage: 4eabf2fa6695c95c47724214417a9c036c965e4a
+  SDWebImageFLPlugin: cf3f4ae49f249dd785129346fd61bbc8433a88cf
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwipeBack: d6759601b40da1f4161033feb30ab475d7d04322
+  TZImagePickerController: 3900e8d68428ff3a88817efce82ae9e7d9ffebc9
+  UMCCommon: 4e80f93492d300245683236668763dc5d0b04dbd
+  UMCCommonLog: 9b7ddde5d14a52fc1986ba5ac3121b8b2f433638
+  UMCPush: 1edd856027dcf905333effb4040ace5d236a7316
+  UMCShare: 52d9ee35f61c51eda3089a7961e1d04ce57b9d6a
+  WechatOpenSDK: 6a4d1436c15b3b5fe2a0bd383f3046010186da44
+
+PODFILE CHECKSUM: efdeb98b14c59fc3d5c85faad638c0c51013d1f5
+
+COCOAPODS: 1.9.3

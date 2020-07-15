@@ -1,0 +1,144 @@
+//
+//  Header.pch
+//  比由技术工场
+//
+//  Created by 李炎 on 2017/9/26.
+//  Copyright © 2017年 李炎. All rights reserved.
+//
+
+#ifndef Header_h
+#define Header_h
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <WebKit/WebKit.h>
+//基类
+#import "BaseNavigationController.h"
+#import "BaseViewController.h"
+#import "BaseTableViewController.h"
+#import "BaseTableViewHeaderFooterView.h"
+#import "BaseCollectionReusableView.h"
+#import "BaseCollectionViewController.h"
+#import "BaseViewController+PublicMethod.h"
+
+#import "SVProgressHUD.h"
+#import <MJExtension.h>
+#import <MJRefresh.h>
+#import "UIView+BSExtension.h"
+#import <UIButton+WebCache.h>
+#import <UIImageView+WebCache.h>
+#import <SDImageCache.h>
+#import <IQKeyboardManager.h>
+#import "NSString+Size.h"
+#import "UIButton+Badge.h"
+#import "UIViewController+AlertShow.h"
+#import "zkRequestTool.h"
+#import "zkSignleTool.h"
+
+#import <Photos/Photos.h>
+#import <ReactiveObjC.h>
+#import "TZImagePickerController.h"
+#import <Masonry.h>
+#import "QYZJBase64.h"
+#import "TabBarController.h"
+#import "QYZJURLDefineTool.h"
+#import "SDImageCache.h"
+#import <CRBoxInputView.h>
+#import "SelectTimeV.h"
+#import "zkPickView.h"
+#import "PublicFuntionTool.h"
+#import "ALMessageModel.h"
+#import "ALCMineDorterView.h"
+#import "ALCChooseJianKangVIew.h"
+#import "zkPickModel.h"
+#import "TongYongTwoCell.h"
+#import "TongYongThreeCell.h"
+#import "HHYSearchHeadView.h"
+#import "HQCustomButton.h"
+#import "ALCSearchView.h"
+#import "ALCHeadOrFootGreenView.h"
+#import "ACLHeadOrFootView.h"
+#import "ALCDorDetailHeadView.h"
+#import "UIButton+red.h"
+#import "ButtonView.h"
+#import "XMCalendarView.h"
+#import "XMCalendarView.h"
+#import "BezierCurveView.h"
+#import "YWUnlockView.h"
+#import "ALCLoginOneVC.h"
+#import "zkPhotoShowVC.h"
+
+#import "MXPhotoPickerController.h"
+#import "UIViewController+MXPhotoPicker.h"
+#import "ALMessageModel.h"
+#import "QYZJUserModel.h"
+#import "XMCalendarTool.h"
+#import "DYScrollRulerView.h"
+#import "ALChatMessageTVC.h"
+#import "ALCMineSearchTVC.h"
+#import "ACLMineMessageTVC.h"
+#import "ALChatMessageTVC.h"
+#import "UIImageView+ASGif.h"
+#import <SDWebImageFLPlugin/SDWebImageFLPlugin.h>
+#import "LxmPushModel.h"
+#import "ALCMineFamilyTVC.h"
+#import "ALCChooseJiuZhenRenTVC.h"
+#import "ACLMineAppointVC.h"
+
+
+#import <UMPush/UMessage.h>
+#import <UMShare/UMShare.h>
+#import <UMCommon/UMCommon.h>
+
+
+#define isUPUPUP [zkSignleTool shareTool].isUp
+
+#define isDidLogin [zkSignleTool shareTool].isLogin
+
+#define iOS11Later ([UIDevice currentDevice].systemVersion.floatValue >= 11.0f)
+
+//状态栏
+#define sstatusHeight [[UIApplication sharedApplication] statusBarFrame].size.height
+//导航栏
+#define NaviH  44
+
+//屏幕的长宽
+#define ScreenW [UIScreen mainScreen].bounds.size.width
+#define ScreenH [UIScreen mainScreen].bounds.size.height
+
+#define kFont(x) [UIFont systemFontOfSize:x]
+
+#define Weak(weakSelf) __weak typeof(self) weakSelf = self;
+
+//黄底字体纯黑
+#define WhiteColor [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1]
+//白底黑字
+#define CharacterColor50 [UIColor colorWithRed:50/255.0 green:50/255.0 blue:50/255.0 alpha:1]
+//白底淡黑
+#define CharacterColor80 [UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:1]
+
+#define CharacterBlack100 [UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1]
+//白底灰字
+#define CharacterBack150 [UIColor colorWithRed:153/255.0 green:153/255.0 blue:153/255.0 alpha:1]
+//时间用
+#define CharacterColor180 [UIColor colorWithRed:180/255.0 green:180/255.0 blue:180/255.0 alpha:1]
+
+
+
+//背景灰
+#define BackgroundColor [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1]
+//线的颜色
+#define lineBackColor [UIColor colorWithRed:235/255.0 green:235/255.0 blue:235/255.0 alpha:1]
+
+#define YellowColor [UIColor colorWithRed:243/255.0 green:193/255.0 blue:108/255.0 alpha:1]
+#define OrangeColor [UIColor colorWithRed:255/255.0 green:114/255.0 blue:49/255.0 alpha:1]
+#define BlueColor [UIColor colorWithRed:162/255.0 green:176/255.0 blue:233/255.0 alpha:1]
+#define GreenColor [UIColor colorWithRed:0/255.0 green:221/255.0 blue:183/255.0 alpha:1]
+//tabbar的字体颜色
+#define TabberGreen [UIColor colorWithRed:0/255.0 green:217/255.0 blue:177/255.0 alpha:1]
+#define TabberGray [UIColor colorWithRed:192/255.0 green:192/255.0 blue:192/255.0 alpha:1]
+#define RGB(R,G,B) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:1]
+
+
+
+#endif /* Header_h */

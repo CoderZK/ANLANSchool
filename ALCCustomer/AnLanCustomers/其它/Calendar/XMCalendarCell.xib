@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="XMCalendarCell" id="gTV-IL-0wX" customClass="XMCalendarCell">
+            <rect key="frame" x="0.0" y="0.0" width="331" height="224"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="331" height="224"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aY3-wt-Srw" userLabel="bgImgView">
+                        <rect key="frame" x="144" y="90.5" width="43" height="43"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="43" id="SpE-gC-2Dw"/>
+                            <constraint firstAttribute="height" constant="43" id="boE-Pg-5Bt"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nem-WK-zzU" userLabel="dianImgView">
+                        <rect key="frame" x="162.5" y="38" width="6" height="6"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="6" id="fpl-oV-TeG"/>
+                            <constraint firstAttribute="height" constant="6" id="lQT-Qy-ajd"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Wk-Xg-e0d">
+                        <rect key="frame" x="3" y="15" width="325" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.29411764709999999" green="0.40784313729999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="初四" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrd-We-sYe">
+                        <rect key="frame" x="3" y="25" width="325" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="Je0-6B-O6Y"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                        <color key="textColor" red="0.29411764709999999" green="0.40784313729999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Nem-WK-zzU" firstAttribute="top" secondItem="9Wk-Xg-e0d" secondAttribute="bottom" constant="6" id="3Bf-r5-tOu"/>
+                <constraint firstItem="9Wk-Xg-e0d" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="A17-Xa-Bo8"/>
+                <constraint firstItem="9Wk-Xg-e0d" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="3" id="CB3-7b-acC"/>
+                <constraint firstItem="aY3-wt-Srw" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="JeQ-HO-ESn"/>
+                <constraint firstItem="aY3-wt-Srw" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="ecK-o9-ikT"/>
+                <constraint firstItem="jrd-We-sYe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="3" id="jse-F8-rvE"/>
+                <constraint firstAttribute="trailing" secondItem="jrd-We-sYe" secondAttribute="trailing" constant="3" id="rpR-ER-GyV"/>
+                <constraint firstAttribute="trailing" secondItem="9Wk-Xg-e0d" secondAttribute="trailing" constant="3" id="x8K-C9-Bzw"/>
+                <constraint firstItem="Nem-WK-zzU" firstAttribute="centerX" secondItem="jrd-We-sYe" secondAttribute="centerX" id="yJA-Fc-mVf"/>
+            </constraints>
+            <size key="customSize" width="331" height="224"/>
+            <connections>
+                <outlet property="bgImgView" destination="aY3-wt-Srw" id="fkU-lf-yxs"/>
+                <outlet property="dayLabel" destination="9Wk-Xg-e0d" id="XE5-Ko-joe"/>
+                <outlet property="dianImgView" destination="Nem-WK-zzU" id="R1Q-8S-7TE"/>
+                <outlet property="lunarLabel" destination="jrd-We-sYe" id="qiu-E0-wWj"/>
+            </connections>
+            <point key="canvasLocation" x="255.19999999999999" y="132.23388305847078"/>
+        </collectionViewCell>
+    </objects>
+</document>

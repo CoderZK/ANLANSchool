@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="136" id="KGk-i7-Jjw" customClass="ALCTuiJianArticleCell">
+            <rect key="frame" x="0.0" y="0.0" width="465" height="136"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="465" height="136"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVv-Qd-xi4">
+                        <rect key="frame" x="15" y="10" width="325" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="jTt-Qv-28K"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.23137254900000001" green="0.23137254900000001" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LDv-pe-hZt" customClass="FLAnimatedImageView">
+                        <rect key="frame" x="350" y="10" width="100" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70" id="GLd-XB-4kA"/>
+                            <constraint firstAttribute="width" constant="100" id="OHl-gK-ppn"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBI-Gl-ejy">
+                        <rect key="frame" x="15" y="135.5" width="435" height="0.5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.59999999999999998" id="rm1-h8-f2k"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wA2-J2-eQv">
+                        <rect key="frame" x="15" y="63" width="325" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="Leg-AO-Dto"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jkgl119" translatesAutoresizingMaskIntoConstraints="NO" id="8bH-kk-CRN">
+                        <rect key="frame" x="428" y="22" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="P7R-Zm-2cs"/>
+                            <constraint firstAttribute="height" constant="15" id="ReB-oC-yV4"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="wA2-J2-eQv" firstAttribute="bottom" secondItem="LDv-pe-hZt" secondAttribute="bottom" id="7X0-I6-J3y"/>
+                    <constraint firstItem="GBI-Gl-ejy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="B0V-z2-9Cj"/>
+                    <constraint firstAttribute="trailing" secondItem="GBI-Gl-ejy" secondAttribute="trailing" constant="15" id="Fhb-mx-B5d"/>
+                    <constraint firstItem="wA2-J2-eQv" firstAttribute="trailing" secondItem="ZVv-Qd-xi4" secondAttribute="trailing" id="JVf-8P-bcv"/>
+                    <constraint firstItem="ZVv-Qd-xi4" firstAttribute="top" secondItem="LDv-pe-hZt" secondAttribute="top" id="Tu2-zC-B2p"/>
+                    <constraint firstItem="LDv-pe-hZt" firstAttribute="leading" secondItem="ZVv-Qd-xi4" secondAttribute="trailing" constant="10" id="UcN-DG-1fO"/>
+                    <constraint firstAttribute="trailing" secondItem="8bH-kk-CRN" secondAttribute="trailing" constant="22" id="Zrh-Or-SEX"/>
+                    <constraint firstItem="ZVv-Qd-xi4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="dKG-Wb-F0v"/>
+                    <constraint firstItem="8bH-kk-CRN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="22" id="pKG-qw-jOJ"/>
+                    <constraint firstAttribute="bottom" secondItem="GBI-Gl-ejy" secondAttribute="bottom" id="qeL-eK-r0g"/>
+                    <constraint firstAttribute="trailing" secondItem="LDv-pe-hZt" secondAttribute="trailing" constant="15" id="t7C-8J-xuz"/>
+                    <constraint firstItem="LDv-pe-hZt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="tjk-rq-kfQ"/>
+                    <constraint firstItem="wA2-J2-eQv" firstAttribute="leading" secondItem="ZVv-Qd-xi4" secondAttribute="leading" id="x9M-Az-ygu"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="imgV" destination="LDv-pe-hZt" id="F01-OZ-UTf"/>
+                <outlet property="lineV" destination="GBI-Gl-ejy" id="hu5-Iq-LX6"/>
+                <outlet property="numberLB" destination="wA2-J2-eQv" id="gfC-EV-wpy"/>
+                <outlet property="playImg" destination="8bH-kk-CRN" id="SPg-Tc-hxT"/>
+                <outlet property="titleLB" destination="ZVv-Qd-xi4" id="92u-U0-IAZ"/>
+            </connections>
+            <point key="canvasLocation" x="42.753623188405797" y="83.705357142857139"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="jkgl119" width="32" height="32"/>
+    </resources>
+</document>

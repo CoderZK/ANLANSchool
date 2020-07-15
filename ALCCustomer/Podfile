@@ -1,0 +1,27 @@
+platform :ios, '8.0'
+target 'AnLanCustomers' do
+pod "MJRefresh"
+pod 'AFNetworking'
+pod 'SDWebImage'
+pod "SVProgressHUD"
+pod 'MJExtension'
+pod 'IQKeyboardManager'
+pod 'SwipeBack'
+
+pod 'UMCCommon'
+pod 'UMCCommonLog'
+pod 'UMCShare/Social/ReducedWeChat'
+pod 'UMCShare/Social/ReducedQQ'
+pod 'UMCPush'
+pod 'AlipaySDK-iOS'
+pod 'WechatOpenSDK'
+
+
+pod 'ReactiveObjC'
+pod 'TZImagePickerController'
+pod 'Masonry'
+pod 'CRBoxInputView'
+pod 'SDCycleScrollView'
+pod 'FLAnimatedImage'
+pod 'SDWebImageFLPlugin'
+end

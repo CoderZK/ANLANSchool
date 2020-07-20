@@ -69,7 +69,7 @@
     
     self.topTitleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 180, 44)];
     self.leftBt = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 90, 44)];
-    [self.leftBt setTitle:@"预约医生" forState:UIControlStateNormal];
+    [self.leftBt setTitle:@"预约教师" forState:UIControlStateNormal];
     self.leftBt.titleLabel.font = [UIFont boldSystemFontOfSize:18];
     [self.leftBt setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     self.leftBt.tag = 100;

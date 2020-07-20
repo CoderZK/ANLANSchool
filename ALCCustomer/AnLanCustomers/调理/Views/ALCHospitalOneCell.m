@@ -49,8 +49,8 @@
            strTh = [NSString stringWithFormat:@"%ld",model.projectAppointmentCnt];
        }
     
-    self.leftLBTwo.text = [NSString stringWithFormat:@"医生: 预约量%@·咨询量%@",str,strTwo];
-    self.leftLBThree.text = [NSString stringWithFormat:@"项目: 预约量%@",strTh];
+    self.leftLBTwo.text = [NSString stringWithFormat:@"咨询量%@",strTwo];
+//    self.leftLBThree.text = [NSString stringWithFormat:@"项目: 预约量%@",strTh];
 }
 
 

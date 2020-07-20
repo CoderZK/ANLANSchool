@@ -31,12 +31,12 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     
-
+    
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self getData];
     }];
     
-    self.titleArr = @[@"心率",@"体重",@"血压",@"经期"];
+    self.titleArr = @[@"心率",@"体重",@"血压",@"身高",@"视力",@"肺活量"];
     
     
     UIButton * submitBtn = [[UIButton alloc] initWithFrame:CGRectMake(15, 200, 60, 44)];
@@ -67,9 +67,9 @@
 
 - (void)getData {
     if (!isDidLogin) {
-           [self gotoLoginVC];
-           return;
-       }
+        [self gotoLoginVC];
+        return;
+    }
     [SVProgressHUD show];
     NSMutableDictionary * dict = @{}.mutableCopy;
     [zkRequestTool networkingPOST:[QYZJURLDefineTool user_healthDataURL] parameters:dict success:^(NSURLSessionDataTask *task, id responseObject) {
@@ -149,8 +149,9 @@
     
     ALCMineBodyinformationcell * cell =[tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//    cell.moreLB.hidden = cell.moreImgV.hidden =  NO;
+    //    cell.moreLB.hidden = cell.moreImgV.hidden =  NO;
     if (indexPath.section == 0) {
+        cell.titleLB.text = @"步数";
         if (self.dataModel.stepnumberData == nil) {
             cell.showNumber = 0;
         }else {
@@ -169,8 +170,8 @@
     }else {
         cell.titleLB.text = self.titleArr[indexPath.row];
         
-//        cell.showNumber = 0;
-//        return cell;
+        //        cell.showNumber = 0;
+        //        return cell;
         
         if (indexPath.row == 0) {
             if (self.dataModel.heartrate == nil) {
@@ -204,19 +205,63 @@
             }
             
         }else if (indexPath.row == 3) {
-//            cell.moreLB.hidden = cell.moreImgV.hidden = YES;
-            if (self.dataModel.menstrual == nil) {
+            
+            if (self.dataModel.bloodpressure == nil) {
                 cell.showNumber = 0;
             }else {
-                cell.showNumber = 3;
-                cell.leftTopLB.text = [NSString stringWithFormat:@"%@",self.dataModel.menstrual.lastday];
-                cell.leftBottomLB.text = @"最后日期";
-                cell.centerTopLB.text = [NSString stringWithFormat:@"%@天",self.dataModel.menstrual.length];
-                cell.centerBottomLB.text = @"持续";
-                cell.rightTopLB.text = [NSString stringWithFormat:@"%@天",self.dataModel.menstrual.period];
-                cell.rightBottomLB.text = @"周期";
+                cell.showNumber = 2;
+                cell.leftTopLB.text = [NSString stringWithFormat:@"%@mmHg",self.dataModel.bloodpressure.systolic];
+                cell.leftBottomLB.text = @"收缩压";
+                cell.rightTopLB.text = [NSString stringWithFormat:@"%@mmHg",self.dataModel.bloodpressure.diastolic];
+                cell.rightBottomLB.text = @"舒张压";
             }
+            
+        }else if (indexPath.row == 4) {
+            
+            cell.showNumber = 2;
+            cell.leftTopLB.text = [NSString stringWithFormat:@"%@",@"5.0"];
+            cell.leftBottomLB.text = @"左眼";
+            cell.rightTopLB.text = [NSString stringWithFormat:@"%@",@"5.1"];
+            cell.rightBottomLB.text = @"右眼";
+            
+//            if (self.dataModel.bloodpressure == nil) {
+//                cell.showNumber = 0;
+//            }else {
+//                cell.showNumber = 2;
+//                cell.leftTopLB.text = [NSString stringWithFormat:@"%@mmHg",self.dataModel.bloodpressure.systolic];
+//                cell.leftBottomLB.text = @"左眼";
+//                cell.rightTopLB.text = [NSString stringWithFormat:@"%@mmHg",self.dataModel.bloodpressure.diastolic];
+//                cell.rightBottomLB.text = @"右眼";
+//            }
+        }else if (indexPath.row == 5) {
+            
+            cell.showNumber = 1;
+            cell.centerTopLB.text = [NSString stringWithFormat:@"%@ml",@"3300"];
+            cell.centerBottomLB.text = @"最新肺活量";
+            
+//            if (self.dataModel.weightData == nil) {
+//                cell.showNumber = 0;
+//            }else {
+//                cell.showNumber = 1;
+//                cell.centerTopLB.text = [NSString stringWithFormat:@"%@ml",self.dataModel.weightData.weight];
+//                cell.centerBottomLB.text = @"最新肺活量";
+//            }
         }
+        
+        //        else if (indexPath.row == 3) {
+        ////            cell.moreLB.hidden = cell.moreImgV.hidden = YES;
+        //            if (self.dataModel.menstrual == nil) {
+        //                cell.showNumber = 0;
+        //            }else {
+        //                cell.showNumber = 3;
+        //                cell.leftTopLB.text = [NSString stringWithFormat:@"%@",self.dataModel.menstrual.lastday];
+        //                cell.leftBottomLB.text = @"最后日期";
+        //                cell.centerTopLB.text = [NSString stringWithFormat:@"%@天",self.dataModel.menstrual.length];
+        //                cell.centerBottomLB.text = @"持续";
+        //                cell.rightTopLB.text = [NSString stringWithFormat:@"%@天",self.dataModel.menstrual.period];
+        //                cell.rightBottomLB.text = @"周期";
+        //            }
+        //        }
         
         cell.moreBt.tag = indexPath.row;
         cell.jiluBt.tag = 100+indexPath.row;
@@ -230,34 +275,51 @@
 //
 - (void)clickAction:(UIButton *)button {
     if (button.tag >= 99) {
-        //点击记录
-        if (button.tag == 103) {
-            ALCJingQiBodyRecordTVC * vc =[[ALCJingQiBodyRecordTVC alloc] initWithTableViewStyle:(UITableViewStyleGrouped)];
-            vc.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:vc animated:YES];
-        } else {
-            ALCMineBodyRecordVC * vc =[[ALCMineBodyRecordVC alloc] init];
-            vc.hidesBottomBarWhenPushed = YES;
-            vc.type = button.tag - 99;
-            [self.navigationController pushViewController:vc animated:YES];
-        }
-    }else {
-        //点击更多
         
-        if (button.tag == 3) {
-            
-            ALCJingQiBodyRecordTVC * vc =[[ALCJingQiBodyRecordTVC alloc] initWithTableViewStyle:(UITableViewStyleGrouped)];
-            vc.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:vc animated:YES];
-            
-            
+        if (button.tag - 99 > 3) {
             return;
         }
         
+        ALCMineBodyRecordVC * vc =[[ALCMineBodyRecordVC alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        vc.type = button.tag - 99;
+        [self.navigationController pushViewController:vc animated:YES];
+        
+//        //点击记录
+//        if (button.tag == 103) {
+//            ALCJingQiBodyRecordTVC * vc =[[ALCJingQiBodyRecordTVC alloc] initWithTableViewStyle:(UITableViewStyleGrouped)];
+//            vc.hidesBottomBarWhenPushed = YES;
+//            [self.navigationController pushViewController:vc animated:YES];
+//        } else {
+//            ALCMineBodyRecordVC * vc =[[ALCMineBodyRecordVC alloc] init];
+//            vc.hidesBottomBarWhenPushed = YES;
+//            vc.type = button.tag - 99;
+//            [self.navigationController pushViewController:vc animated:YES];
+//        }
+    }else {
+        //点击更多
+        if (button.tag > 3) {
+            return;
+        }
         ALCTiZHongLineTVC * vc =[[ALCTiZHongLineTVC alloc] initWithTableViewStyle:(UITableViewStyleGrouped)];
         vc.hidesBottomBarWhenPushed = YES;
         vc.type = button.tag + 1;
         [self.navigationController pushViewController:vc animated:YES];
+        
+//        if (button.tag == 3) {
+//
+//            ALCJingQiBodyRecordTVC * vc =[[ALCJingQiBodyRecordTVC alloc] initWithTableViewStyle:(UITableViewStyleGrouped)];
+//            vc.hidesBottomBarWhenPushed = YES;
+//            [self.navigationController pushViewController:vc animated:YES];
+//
+//
+//            return;
+//        }
+//
+//        ALCTiZHongLineTVC * vc =[[ALCTiZHongLineTVC alloc] initWithTableViewStyle:(UITableViewStyleGrouped)];
+//        vc.hidesBottomBarWhenPushed = YES;
+//        vc.type = button.tag + 1;
+//        [self.navigationController pushViewController:vc animated:YES];
     }
     
     
@@ -267,12 +329,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (indexPath.section == 1 && indexPath.row != 3) {
+    if (indexPath.section == 1 ) {
+        if  (indexPath.row > 3) {
+            return;
+        }
         ALCTiZHongLineTVC * vc =[[ALCTiZHongLineTVC alloc] initWithTableViewStyle:(UITableViewStyleGrouped)];
         vc.hidesBottomBarWhenPushed = YES;
         vc.type = indexPath.row +1;
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 0) {
+        if  (indexPath.row > 3) {
+            return;
+        }
         ALCTiZHongLineTVC * vc =[[ALCTiZHongLineTVC alloc] initWithTableViewStyle:(UITableViewStyleGrouped)];
         vc.hidesBottomBarWhenPushed = YES;
         vc.type = 0;

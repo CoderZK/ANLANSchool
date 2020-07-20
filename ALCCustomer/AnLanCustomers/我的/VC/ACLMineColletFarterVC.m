@@ -81,7 +81,7 @@
 
 //设置三个按钮
 - (void)setupHeaderView {
-    NSArray *array = @[@"文章",@"医院",@"医生"];
+    NSArray *array = @[@"文章",@"学校",@"教师"];
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 35)];
     
     self.buttonView = view;

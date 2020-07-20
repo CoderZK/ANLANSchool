@@ -130,7 +130,7 @@
     [vv addSubview:searchTitleView];
     
     self.tableView.frame = CGRectMake(0, 60 , ScreenW, ScreenH -  60);
-    self.navigationItem.title = @"从咨询过的医生内选择";
+    self.navigationItem.title = @"从咨询过的教师内选择";
 }
 
 

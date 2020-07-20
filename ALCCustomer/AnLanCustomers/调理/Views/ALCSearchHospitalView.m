@@ -45,7 +45,7 @@
         
         self.levelSelectIndex = self.hospitalSelectIndex = -1;
         
-        self.dataArray = @[@"离我最近",@"医生预约量",@"项目预约量"];
+        self.dataArray = @[@"离我最近",@"教师预约量"];
         
         
     }
@@ -84,7 +84,7 @@
     [self.headV.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     self.headV = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 0.1)];
     UILabel * lb1 = [[UILabel alloc] initWithFrame:CGRectMake(15, 15, ScreenW - 30, 20)];
-    lb1.text = @"医院类型";
+    lb1.text = @"学校类型";
     lb1.textColor = CharacterColor50;
     lb1.font = kFont(14);
     [self.headV addSubview:lb1];
@@ -108,7 +108,7 @@
     
 
     UILabel * lb2 = [[UILabel alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(backV.frame) + 15, ScreenW - 30, 20)];
-    lb2.text = @"医院等级";
+    lb2.text = @"学校等级";
     lb2.textColor = CharacterColor50;
     lb2.font = kFont(14);
     [self.headV addSubview:lb2];

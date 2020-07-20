@@ -20,7 +20,7 @@
         
         self.nameLB = [[UILabel alloc] initWithFrame:CGRectMake(75, 15, ScreenW - 75 - 15 - 100, 20)];
         self.nameLB.textColor = CharacterColor50;
-        self.nameLB.text = @"陈继续 主任医生";
+        self.nameLB.text = @"陈继续 主任教师";
         [self addSubview:self.nameLB];
         
         self.timeLB = [[UILabel alloc] initWithFrame:CGRectMake(ScreenW - 115, 15, 100, 17)];
@@ -34,7 +34,7 @@
         self.desLB = [[UILabel alloc] initWithFrame:CGRectMake(75, 50, ScreenW - 90, 20)];
         self.desLB.textColor = CharacterBlack100;
         self.desLB.font = kFont(14);
-        self.desLB.text = @"常州市第一人民医院 骨科";
+        self.desLB.text = @"常州市第一人民学校 骨科";
         [self addSubview:self.desLB];
         
         

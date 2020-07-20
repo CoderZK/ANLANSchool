@@ -18,6 +18,7 @@
 @property(nonatomic,strong)ALCDorDetailHeadView *headV;
 @property(nonatomic,strong)ALMessageModel *dataModel;
 @property(nonatomic,strong)UIButton *rightBt;
+@property(nonatomic,strong)UIButton *footBt;
 @end
 
 @implementation ALCDorDetailOneTVC
@@ -42,9 +43,13 @@
     [super viewDidLoad];
     
     
+    [self addFootV];
     
-    
-    self.tableView.frame = CGRectMake(0, -sstatusHeight, ScreenW, ScreenH+sstatusHeight);
+    self.tableView.frame = CGRectMake(0, -sstatusHeight, ScreenW, ScreenH+sstatusHeight - 60 );
+    if (sstatusHeight > 20) {
+        self.tableView.frame = CGRectMake(0, -sstatusHeight, ScreenW, ScreenH+sstatusHeight - 60 -34 );
+        self.footBt.mj_y = ScreenH - 60 -34;
+    }
     self.headV = [[ALCDorDetailHeadView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 301)];
     self.headV.backgroundColor = [UIColor redColor];
     self.tableView.tableHeaderView = self.headV;
@@ -96,6 +101,27 @@
     
     
 }
+- (void)addFootV {
+    
+    self.footBt  = [[UIButton alloc] initWithFrame:CGRectMake(0, ScreenH - 60, ScreenW, 60)];
+    [self.view addSubview:self.footBt];
+    [self.footBt setImage:[UIImage imageNamed:@"jkgl50"] forState:UIControlStateNormal];
+    self.footBt.backgroundColor  = RGB(230, 230, 230);
+    [self.footBt setTitle:@"在线咨询" forState:UIControlStateNormal];
+    self.footBt.titleLabel.font = kFont(16);
+    [self.footBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    @weakify(self);
+    [[self.footBt rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        @strongify(self);
+        ALCChooseJiuZhenRenTVC* vc =[[ALCChooseJiuZhenRenTVC alloc] initWithTableViewStyle:(UITableViewStyleGrouped)];
+            vc.hidesBottomBarWhenPushed = YES;
+            vc.toUserId = self.doctorId;
+            vc.isLiaoTian = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+    }];
+    
+}
+
 
 - (void)getData {
     [SVProgressHUD show];
@@ -109,6 +135,8 @@
             
             self.dataModel = [ALMessageModel mj_objectWithKeyValues:responseObject[@"data"]];
             self.headV.model = self.dataModel.info;
+            self.headV.mj_h = self.dataModel.info.HHHHHH;
+            self.tableView.tableHeaderView = self.headV;
             [self.headV.headBt sd_setBackgroundImageWithURL:[self.dataModel.info.avatar getPicURL] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"369"]];
             if (self.dataModel.info.isCollection) {
                 [self.rightBt setImage:[UIImage imageNamed:@"jkgl47"] forState:UIControlStateNormal];
@@ -164,7 +192,7 @@
     UILabel * titelLB = [[UILabel alloc] initWithFrame:CGRectMake(100, sstatusHeight + 2, ScreenW - 200, 40)];
     titelLB.font = kFont(18);
     titelLB.textColor = WhiteColor;
-    titelLB.text = @"医生详情";
+    titelLB.text = @"教师详情";
     titelLB.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:titelLB];
     
@@ -195,10 +223,10 @@
             
             if ([button.currentImage isEqual:[UIImage imageNamed:@"jkgl48"]]) {
                 //未收藏
-                [SVProgressHUD showSuccessWithStatus:@"收藏医生成功"];
+                [SVProgressHUD showSuccessWithStatus:@"收藏教师成功"];
                 [button setImage:[UIImage imageNamed:@"jkgl47"] forState:UIControlStateNormal];
             }else {
-                [SVProgressHUD showSuccessWithStatus:@"取消医生收藏成功"];
+                [SVProgressHUD showSuccessWithStatus:@"取消教师收藏成功"];
                 [button setImage:[UIImage imageNamed:@"jkgl48"] forState:UIControlStateNormal];
             }
             
@@ -231,13 +259,15 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        return 130;
+        return 0;
     }
     return 154;
 }
 
 - (CGFloat )tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    
+    if (section == 0) {
+        return 0.01;
+    }
     return 40;
 }
 
@@ -261,10 +291,10 @@
     //       }
     if (section == 0) {
         view.rightBt.hidden = YES;
-        view.leftLB.text = @"医生服务";
+        view.leftLB.text = @"教师服务";
     }else if (section == 1) {
         view.rightBt.hidden = NO;
-        view.leftLB.text = @"推荐医生";
+        view.leftLB.text = @"教师推荐";
     }
     view.clipsToBounds = YES;
     view.backgroundColor = WhiteColor;
@@ -281,6 +311,7 @@
         [cell.rightBt addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.model = self.dataModel.info;
+        cell.clipsToBounds = YES;
         return cell;
     }else {
         ALCDorListCell * cell =[tableView dequeueReusableCellWithIdentifier:@"ALCDorListCell" forIndexPath:indexPath];
@@ -305,7 +336,7 @@
     if(button.tag == 100) {
         
         if (!self.dataModel.info.isAppointment) {
-            [SVProgressHUD showErrorWithStatus:@"此医生不可预约"];
+            [SVProgressHUD showErrorWithStatus:@"此教师不可预约"];
             return;
         }
         
@@ -317,7 +348,7 @@
         [self.navigationController pushViewController:vc animated:YES];
     }else {
         if (!self.dataModel.info.isConsultation) {
-            [SVProgressHUD showErrorWithStatus:@"此医生不可在线咨询"];
+            [SVProgressHUD showErrorWithStatus:@"此教师不可在线咨询"];
             return;
         }
         ALCChooseJiuZhenRenTVC* vc =[[ALCChooseJiuZhenRenTVC alloc] initWithTableViewStyle:(UITableViewStyleGrouped)];

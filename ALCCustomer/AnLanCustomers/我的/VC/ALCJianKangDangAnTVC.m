@@ -188,7 +188,7 @@
     cell.textLabel.text = @"123456";
     cell.typeCell = 1;
 //    cell.isHiddenMoreImagV = YES;
-    cell.titleStr = @"健康日志";
+    cell.titleStr = @"跟踪报告";
     cell.dataArray = self.dataAppArray;
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

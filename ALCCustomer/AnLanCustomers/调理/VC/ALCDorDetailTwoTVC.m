@@ -108,7 +108,7 @@
     UILabel * titelLB = [[UILabel alloc] initWithFrame:CGRectMake(100, sstatusHeight + 2, ScreenW - 200, 40)];
     titelLB.font = kFont(18);
     titelLB.textColor = WhiteColor;
-    titelLB.text = @"医生信息";
+    titelLB.text = @"教师信息";
     titelLB.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:titelLB];
     
@@ -147,10 +147,10 @@
             
             if ([button.currentImage isEqual:[UIImage imageNamed:@"jkgl48"]]) {
                 //未收藏
-                [SVProgressHUD showSuccessWithStatus:@"收藏医生成功"];
+                [SVProgressHUD showSuccessWithStatus:@"收藏教师成功"];
                 [button setImage:[UIImage imageNamed:@"jkgl47"] forState:UIControlStateNormal];
             }else {
-                [SVProgressHUD showSuccessWithStatus:@"取消医生收藏成功"];
+                [SVProgressHUD showSuccessWithStatus:@"取消教师收藏成功"];
                 [button setImage:[UIImage imageNamed:@"jkgl48"] forState:UIControlStateNormal];
             }
             

@@ -109,9 +109,17 @@
     lb.textColor = CharacterColor50;
     lb.font = kFont(14);
     [view addSubview:lb];
-    lb.text = @"信息能供主治医生查看,请认证填写";
+    lb.text = @"信息能供主治教师查看,请认证填写";
     
     self.tableView.tableHeaderView = view;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0 || indexPath.row == 1) {
+        return 0;
+    }else {
+        return  UITableViewAutomaticDimension;
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -128,6 +136,7 @@
     
     ALCMineJianMessageCell * cell =[tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.titleLB.text = self.leftArr[indexPath.row];
+    cell.clipsToBounds = YES;
     if (indexPath.row == 0) {
         
         NSString * str = @"未完善";

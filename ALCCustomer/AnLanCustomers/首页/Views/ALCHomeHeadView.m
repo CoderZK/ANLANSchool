@@ -99,7 +99,7 @@
         self.monthLB.font =[UIFont systemFontOfSize:15 weight:0.2];
         self.monthLB.textColor = CharacterColor50;
         NSInteger month = [[[XMCalendarTool alloc] init] getMonthIndate:[NSDate date]];
-        self.monthLB.text = [NSString stringWithFormat:@"健康提醒·%ld月",month];
+        self.monthLB.text = [NSString stringWithFormat:@"提醒·%ld月",month];
         [self.whiteV addSubview:self.monthLB];
         
         self.moreBt = [[UIButton alloc] initWithFrame:CGRectMake(ScreenW-30 - 145, 5, 130, 40)];

@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ACLMineAppiontDorDetailTVC : BaseTableViewController
-@property(nonatomic,assign)BOOL isHot;//NO 是医生 Yes 是项目
+@property(nonatomic,assign)BOOL isHot;//NO 是教师 Yes 是项目
 @property(nonatomic,strong)NSString *ID;
 @end
 

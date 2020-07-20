@@ -20,16 +20,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    self.navigationItem.title = @"医生列表";
+//    self.navigationItem.title = @"教师列表";
     
     [self.tableView registerNib:[UINib nibWithNibName:@"ALCDorListCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     if (self.isComeSearch || self.isComeHome) {
         
-        self.navigationItem.title = @"医生列表";
+        self.navigationItem.title = @"教师列表";
         if (self.isComeHome) {
-            self.navigationItem.title = @"医生推荐";
+            self.navigationItem.title = @"教师推荐";
             self.page = 1;
                    self.dataArray = @[].mutableCopy;
                    [self getData];

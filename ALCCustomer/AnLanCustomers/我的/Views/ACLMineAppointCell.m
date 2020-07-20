@@ -49,14 +49,14 @@
         }else {
             self.statusLB.text = @"已预约";
         }
-        self.bNameLB.text = [NSString stringWithFormat:@"就诊人:%@ %@ %@",model.patientName,model.appointmentDate,dd];
+        self.bNameLB.text = [NSString stringWithFormat:@"用户:%@ %@ %@",model.patientName,model.appointmentDate,dd];
         self.imgV.image = [UIImage imageNamed:@"jkgl135"];
     }else {
         self.moneyLB.hidden = NO;
         self.nameLB.text = model.name;
         self.addressLB.text = [NSString stringWithFormat:@"%@ 分钟",model.duration];
         self.moneyLB.text = [NSString stringWithFormat:@"￥%0.2f",model.price];
-         self.bNameLB.text = [NSString stringWithFormat:@"就诊人:%@ %@",model.patientName,model.appointmentDate];
+         self.bNameLB.text = [NSString stringWithFormat:@"用户:%@ %@",model.patientName,model.appointmentDate];
         self.imgV.image = [UIImage imageNamed:@"jkgl134"];
         
         NSString * str = @"";

@@ -91,7 +91,7 @@
     
     //病史
     
-    NSArray * arr = @[@"年龄",@"出生日期",@"曾就诊机构",@"曾就诊项目"];
+    NSArray * arr = @[@"年龄",@"出生日期",@"曾就读学校",@"曾咨询项目"];
     
     UILabel * lb11 = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(lb1.frame), CGRectGetMaxY(headImgV.frame) + 15, 60, 17)];
     lb11.text = @"年龄: ";
@@ -122,7 +122,7 @@
     
     
     UILabel * lb33 = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(lb1.frame), CGRectGetMaxY(lb22.frame) + 10, 60, 17)];
-    lb33.text = @"曾就诊机构: ";
+    lb33.text = @"曾就读学校: ";
     lb33.textColor = CharacterBack150;
     lb33.mj_w = [lb33.text getWidhtWithFontSize:14];
     lb33.font = kFont(14);
@@ -136,7 +136,7 @@
     [view addSubview:lb332];
     
     UILabel * lb44 = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(lb1.frame), CGRectGetMaxY(lb33.frame) + 10, 60, 17)];
-    lb44.text = @"曾就诊项目: ";
+    lb44.text = @"曾咨询项目: ";
     lb44.textColor = CharacterBack150;
     lb44.mj_w = [lb44.text getWidhtWithFontSize:14];
     lb44.font = kFont(14);

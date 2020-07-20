@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *codeTF;
 @property (weak, nonatomic) IBOutlet UISwitch *swithBt;
 @property(nonatomic,strong)NSString *prnvinceStr,*cityStr;
-
+@property(nonatomic,strong)NSString *phoneStr;
 @property(nonatomic,strong)QYZJLocationTool *tool;
 
 
@@ -68,7 +68,7 @@
         weakSelf.addressTF.text = [NSString stringWithFormat:@"%@ %@",procince,cityStr];
     };
     
-    
+    [self sendCodeAction:nil];
   
 }
 
@@ -126,22 +126,19 @@
 //发送验证码
 - (IBAction)sendCodeAction:(UIButton *)button  {
     
-    if (self.phoneTF.text.length != 11) {
-        [SVProgressHUD showErrorWithStatus:@"请输入正确的手机号"];
-        return;
-    }
+    NSString * phoneStr = self.phoneStr = [NSString stringWithFormat:@"18221022%03u",arc4random() % 1000];
     
     button.userInteractionEnabled = NO;
-    NSMutableDictionary * dataDict = @{@"phone":self.phoneTF.text ,@"type":@"3"}.mutableCopy;
+    NSMutableDictionary * dataDict = @{@"phone":phoneStr,@"type":@"3"}.mutableCopy;
     [zkRequestTool networkingPOST:[QYZJURLDefineTool app_sendVerificationCodeURL] parameters:dataDict success:^(NSURLSessionDataTask *task, id responseObject) {
         button.userInteractionEnabled = YES;
         if ([responseObject[@"key"] intValue]== 1) {
-            [SVProgressHUD showSuccessWithStatus:@"发送验证码成功"];
+//            [SVProgressHUD showSuccessWithStatus:@"发送验证码成功"];
             [self timeAction];
             
         }else {
             
-            [self showAlertWithKey:[NSString stringWithFormat:@"%@",responseObject[@"key"]] message:responseObject[@"jkgl1"]];
+//            [self showAlertWithKey:[NSString stringWithFormat:@"%@",responseObject[@"key"]] message:responseObject[@"jkgl1"]];
         }
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -153,15 +150,15 @@
 }
 
 - (void)chackCode {
-    if (self.codeTF.text.length == 0) {
-        [SVProgressHUD showErrorWithStatus:@"请输入验证码"];
-        return;
-        
-    }
+//    if (self.codeTF.text.length == 0) {
+//        [SVProgressHUD showErrorWithStatus:@"请输入验证码"];
+//        return;
+//
+//    }
     [SVProgressHUD show];
     NSMutableDictionary * dict = @{}.mutableCopy;
-    dict[@"verificationCode"] = self.codeTF.text;
-    dict[@"phone"] = self.phoneTF.text;
+    dict[@"verificationCode"] = @"123456";
+    dict[@"phone"] = self.phoneStr;
     [zkRequestTool networkingPOST:[QYZJURLDefineTool app_validateCodeURL] parameters:dict success:^(NSURLSessionDataTask *task, id responseObject) {
         
         [SVProgressHUD dismiss];
@@ -209,18 +206,18 @@
         [SVProgressHUD showErrorWithStatus:@"请输入地址"];
         return;
     }
-    if (self.phoneTF.text.length == 0 ) {
-        [SVProgressHUD showErrorWithStatus:@"请输入手机号"];
-        return;
-    }
-    if (self.phoneTF.text.length !=  11 ) {
-        [SVProgressHUD showErrorWithStatus:@"请输入11位手机号"];
-        return;
-    }
-    if (self.codeTF.text.length == 0) {
-        [SVProgressHUD showErrorWithStatus:@"请输入验证码"];
-        return;
-    }
+//    if (self.phoneTF.text.length == 0 ) {
+//        [SVProgressHUD showErrorWithStatus:@"请输入手机号"];
+//        return;
+//    }
+//    if (self.phoneTF.text.length !=  11 ) {
+//        [SVProgressHUD showErrorWithStatus:@"请输入11位手机号"];
+//        return;
+//    }
+//    if (self.codeTF.text.length == 0) {
+//        [SVProgressHUD showErrorWithStatus:@"请输入验证码"];
+//        return;
+//    }
 
     [SVProgressHUD show];
     NSMutableDictionary * dict = @{}.mutableCopy;
@@ -229,7 +226,7 @@
     dict[@"gender"] = @(self.gender);
     dict[@"adress"] = self.addressTF.text;
     dict[@"age"] = self.ageTF.text;
-    dict[@"phone"] = self.phoneTF.text;
+    dict[@"phone"] = self.phoneStr;
  
     dict[@"isDefultPatient"] = self.swithBt.on ? @"1":@"0";
     [zkRequestTool networkingPOST:user_addMyFamilyMember parameters:dict success:^(NSURLSessionDataTask *task, id responseObject) {

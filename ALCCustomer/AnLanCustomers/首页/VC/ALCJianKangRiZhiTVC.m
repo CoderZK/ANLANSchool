@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"健康日志";
+    self.navigationItem.title = @"跟踪报告";
     
       UIButton * submitBtn = [[UIButton alloc] initWithFrame:CGRectMake(15, 200, 60, 44)];
       submitBtn.layer.cornerRadius = 22;

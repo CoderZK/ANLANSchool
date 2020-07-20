@@ -25,7 +25,7 @@
     
     self.selectRow = 0;
     self.leftArrOne = @[@"公开",@"私密",@"部分人可见"];
-    self.leftArrTwo = @[@"所有医生可见",@"仅自己可见",@"选中的人可见"];
+    self.leftArrTwo = @[@"所有教师可见",@"仅自己可见",@"选中的人可见"];
 
     
     [self.tableView registerNib:[UINib nibWithNibName:@"ALCJianKangRiZhiSecretCell" bundle:nil] forCellReuseIdentifier:@"cell"];

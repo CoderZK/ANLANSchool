@@ -11,10 +11,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ALCDorDetailHeadView : UIView
-@property(nonatomic,strong)UILabel *nameLB,*keshiLB1,*yuYueLB,*ziXunLB,*shanchangLB;
+@property(nonatomic,strong)UILabel *nameLB,*keshiLB1,*yuYueLB,*ziXunLB,*shanchangLB,*jianJieDesLB,*LB1,*LB2;
 @property(nonatomic,strong)UIButton *dorMeBt ,*headBt,*addressBt;
 @property(nonatomic,strong)ALMessageModel *model;
 @property(nonatomic,assign)BOOL isProject;
+
 @end
 
 NS_ASSUME_NONNULL_END

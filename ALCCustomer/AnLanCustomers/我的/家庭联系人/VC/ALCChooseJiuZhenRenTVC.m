@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"选择就诊人";
+    self.navigationItem.title = @"选择用户";
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;

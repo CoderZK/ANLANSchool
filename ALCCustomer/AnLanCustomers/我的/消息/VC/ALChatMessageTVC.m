@@ -19,6 +19,7 @@
 @property(nonatomic,strong)NSMutableArray *picArr;
 @property(nonatomic,assign)NSInteger messagetype;
 @property(nonatomic,strong)NSString *getIn;
+@property(nonatomic,strong)UIView *headV;
 
 
 @end
@@ -54,8 +55,27 @@
     self.tableView.estimatedSectionFooterHeight = 0;
     self.getIn = @"ture";
     
+    [self addheadV];
+    
+    
 }
 
+- (void)addheadV  {
+    
+    self.headV = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 150)];
+    
+    UIView *whiteV  =[[UIView alloc] initWithFrame:CGRectMake(20, 15, ScreenW - 40, 20)];
+    
+    UILabel * LB  =[[UILabel alloc] initWithFrame:CGRectMake(10, 10, ScreenW - 60, 20)];
+    LB.attributedText = [@"温馨提示：当前时间教师可能正在休息，如果没有及时回复，请耐心等待，教师看到后会第一时间通知您" getMutableAttributeStringWithFont:14 lineSpace:3 textColor:CharacterColor50];
+    LB.mj_h = [@"温馨提示：当前时间教师可能正在休息，如果没有及时回复，请耐心等待，教师看到后会第一时间通知您" getHeigtWithFontSize:14 lineSpace:3 width:ScreenW - 60] + 20;
+    whiteV.mj_h = LB.mj_h + 20;
+  
+    self.headV.mj_h = whiteV.mj_h + 30;
+    
+    self.tableView.tableHeaderView = self.headV;
+    
+}
 
 - (void)getData {
     

@@ -17,10 +17,14 @@
 #import "ALCProjectTVC.h"
 #import "ALCChooseAdministrativeTVC.h"
 #import "ALCProjectDetailTVC.h"
+#import "ALCDorListCell.h"
+#import "ALCDorDetailOneTVC.h"
 @interface ALCHospitalHomeTVC ()<ALCHospitalTwoCellDelegate>
 //@property(nonatomic,strong)NSArray  *dataArray;
 @property(nonatomic,strong)ALMessageModel *dataModel;
 @property(nonatomic,strong)UIButton *rightBt;
+@property(nonatomic,strong)UIButton *footBt;
+@property(nonatomic,strong)NSMutableArray<ALMessageModel *> *dataArray;
 @end
 
 @implementation ALCHospitalHomeTVC
@@ -34,8 +38,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"医院主页";
-    
+    self.navigationItem.title = @"学校主页";
+    self.dataArray = @[].mutableCopy;
 //    UIButton * submitBtn = [[UIButton alloc] initWithFrame:CGRectMake(15, 200, 60, 44)];
 //    submitBtn.layer.cornerRadius = 22;
 //    submitBtn.layer.masksToBounds = YES;
@@ -53,6 +57,10 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"ALCHospitalOneCell" bundle:nil] forCellReuseIdentifier:@"ALCHospitalOneCell"];
        [self.tableView registerNib:[UINib nibWithNibName:@"ALCTiaoLiTwoCell" bundle:nil] forCellReuseIdentifier:@"ALCTiaoLiTwoCell"];
      [self.tableView registerNib:[UINib nibWithNibName:@"ALCHospitalThreeCell" bundle:nil] forCellReuseIdentifier:@"ALCHospitalThreeCell"];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"ALCDorListCell" bundle:nil] forCellReuseIdentifier:@"ALCDorListCell"];
+
+    
     [self.tableView registerClass:[ACLHeadOrFootView class] forHeaderFooterViewReuseIdentifier:@"head"];
     [self.tableView registerClass:[ALCHospitalTwoCell class] forCellReuseIdentifier:@"cell"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -61,7 +69,77 @@
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self getData];
     }];
+    
+    [self addFootV];
+    if (sstatusHeight > 20) {
+        self.tableView.mj_h = ScreenH  - 60 - 34;
+        self.footBt.mj_y = ScreenH  - sstatusHeight - 44 - 60 - 34;
+    }else {
+         self.tableView.mj_h = ScreenH - 60 - 34;
+    }
+    
+    [self getTercherData];
+    
 }
+
+- (void)addFootV {
+    
+    self.footBt  = [[UIButton alloc] initWithFrame:CGRectMake(0, ScreenH - 60, ScreenW, 60)];
+    [self.view addSubview:self.footBt];
+    [self.footBt setImage:[UIImage imageNamed:@"jkgl50"] forState:UIControlStateNormal];
+    self.footBt.backgroundColor  = RGB(230, 230, 230);
+    [self.footBt setTitle:@"在线咨询" forState:UIControlStateNormal];
+    self.footBt.titleLabel.font = kFont(16);
+    [self.footBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    @weakify(self);
+    [[self.footBt rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        @strongify(self);
+        //点击预约教师
+        ALCChooseAdministrativeTVC * vc =[[ALCChooseAdministrativeTVC alloc] initWithTableViewStyle:(UITableViewStyleGrouped)];
+        vc.hidesBottomBarWhenPushed = YES;
+        vc.hosID = self.institutionId;
+        vc.departmentList = self.dataModel.departmentList;
+        [self.navigationController pushViewController:vc animated:YES];
+    }];
+    
+}
+
+- (void)getTercherData {
+    
+    
+    [SVProgressHUD show];
+    NSMutableDictionary * dict = @{}.mutableCopy;
+    dict[@"page"] = @(1);
+    dict[@"pageSize"] = @(3);
+
+    
+    NSString *url = [QYZJURLDefineTool app_findDoctorListURL];
+    url = [QYZJURLDefineTool user_moreDataURL];
+    dict[@"condition"] = @"1";
+ 
+    [zkRequestTool networkingPOST:url parameters:dict success:^(NSURLSessionDataTask *task, id responseObject) {
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
+        [SVProgressHUD dismiss];
+        if ([[NSString stringWithFormat:@"%@",responseObject[@"key"]] integerValue] == 1) {
+            NSArray<ALMessageModel *>*arr = @[];
+            arr =  [ALMessageModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+            [self.dataArray removeAllObjects];
+            [self.dataArray addObjectsFromArray:arr];
+            [self.tableView reloadData];
+        }else {
+            [self showAlertWithKey:[NSString stringWithFormat:@"%@",responseObject[@"key"]] message:responseObject[@"message"]];
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
+    }];
+    
+    
+    
+}
+
+
 
 - (void)getData {
     [SVProgressHUD show];
@@ -117,10 +195,10 @@
             
             if ([button.currentImage isEqual:[UIImage imageNamed:@"jkgl48"]]) {
                 //未收藏
-                [SVProgressHUD showSuccessWithStatus:@"收藏医院成功"];
+                [SVProgressHUD showSuccessWithStatus:@"收藏学校成功"];
                 [button setImage:[UIImage imageNamed:@"jkgl47"] forState:UIControlStateNormal];
             }else {
-                [SVProgressHUD showSuccessWithStatus:@"取消医院收藏成功"];
+                [SVProgressHUD showSuccessWithStatus:@"取消学校收藏成功"];
                 [button setImage:[UIImage imageNamed:@"jkgl48"] forState:UIControlStateNormal];
             }
             
@@ -146,7 +224,7 @@
     if (section < 3) {
         return 1;
     }
-    return self.dataModel.recommendProjectList.count;
+    return self.dataArray.count > 3 ? 3:self.dataArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -157,11 +235,11 @@
         return ww* lines + lines * space + 10;
     }
     if (indexPath.section == 1) {
-        return 125;
+        return 0;
     }else if (indexPath.section == 0) {
         return 90;
     }
-    return 110;
+    return 154;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -172,6 +250,7 @@
         
         cell.rightLB.hidden = NO;
         cell.leftLBThree.textColor = cell.leftLBTwo.textColor = CharacterBlack100;
+        cell.leftLBThree.hidden = YES;
         cell.model = self.dataModel.info;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
@@ -181,6 +260,7 @@
         [cell.leftBt addTarget:self action:@selector(clickCell:) forControlEvents:UIControlEventTouchUpInside];
         [cell.centerBt addTarget:self action:@selector(clickCell:) forControlEvents:UIControlEventTouchUpInside];
         [cell.rightBt addTarget:self action:@selector(clickCell:) forControlEvents:UIControlEventTouchUpInside];
+        cell.clipsToBounds = YES;
         return cell;
     }else if (indexPath.section == 2) {
         ALCHospitalTwoCell * cell =[tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
@@ -189,9 +269,10 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
             return cell;
     }else {
-        ALCHospitalThreeCell * cell =[tableView dequeueReusableCellWithIdentifier:@"ALCHospitalThreeCell" forIndexPath:indexPath];
-        cell.model = self.dataModel.recommendProjectList[indexPath.row];
+       ALCDorListCell * cell =[tableView dequeueReusableCellWithIdentifier:@"ALCDorListCell" forIndexPath:indexPath];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.model = self.dataArray[indexPath.row];
+        
         return cell;
     }
 
@@ -228,10 +309,10 @@
 //       }
     if (section == 2) {
           view.rightBt.hidden = YES;
-          view.leftLB.text = @"选择科室";
+          view.leftLB.text = @"选择部门";
       }else if (section == 3) {
           view.rightBt.hidden = NO;
-          view.leftLB.text = @"推荐项目";
+          view.leftLB.text = @"教师推荐";
       }
     view.rightBt.tag = section;
     [view.rightBt addTarget:self action:@selector(rightAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -244,11 +325,17 @@
     if  (button.tag != 3) {
         return;
     }
-    ALCProjectTVC * vc =[[ALCProjectTVC alloc] initWithTableViewStyle:(UITableViewStyleGrouped)];
+    
+    ALCDorListTVC * vc =[[ALCDorListTVC alloc] initWithTableViewStyle:(UITableViewStyleGrouped)];
     vc.hidesBottomBarWhenPushed = YES;
-    vc.institutionId = self.institutionId;
-    vc.isR = YES;
+    vc.isComeHome = YES;
     [self.navigationController pushViewController:vc animated:YES];
+    
+//    ALCProjectTVC * vc =[[ALCProjectTVC alloc] initWithTableViewStyle:(UITableViewStyleGrouped)];
+//    vc.hidesBottomBarWhenPushed = YES;
+//    vc.institutionId = self.institutionId;
+//    vc.isR = YES;
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
@@ -268,11 +355,17 @@
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 3) {
         
-        ALCProjectDetailTVC * vc =[[ALCProjectDetailTVC alloc] initWithTableViewStyle:(UITableViewStyleGrouped)];
+//        ALCProjectDetailTVC * vc =[[ALCProjectDetailTVC alloc] initWithTableViewStyle:(UITableViewStyleGrouped)];
+//        vc.hidesBottomBarWhenPushed = YES;
+//        vc.projectId = self.dataModel.recommendProjectList[indexPath.row].ID;
+//        vc.institutionId = self.institutionId;
+//        [self.navigationController pushViewController:vc animated:YES];
+        
+        ALCDorDetailOneTVC * vc =[[ALCDorDetailOneTVC alloc] initWithTableViewStyle:(UITableViewStyleGrouped)];
         vc.hidesBottomBarWhenPushed = YES;
-        vc.projectId = self.dataModel.recommendProjectList[indexPath.row].ID;
-        vc.institutionId = self.institutionId;
+        vc.doctorId = self.dataArray[indexPath.row].ID;
         [self.navigationController pushViewController:vc animated:YES];
+        
         
     }
 
@@ -296,7 +389,7 @@
 
 - (void)clickCell:(UIButton *)button {
     if (button.tag == 100 || button.tag == 101) {
-        //点击预约医生
+        //点击预约教师
         ALCChooseAdministrativeTVC * vc =[[ALCChooseAdministrativeTVC alloc] initWithTableViewStyle:(UITableViewStyleGrouped)];
         vc.hidesBottomBarWhenPushed = YES;
         vc.hosID = self.institutionId;

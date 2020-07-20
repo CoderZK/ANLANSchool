@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ALCTiZHongLineTVC : BaseTableViewController
-@property(nonatomic,assign)NSInteger type;//  类型,0 步数 1 心率 2 体重 3 血压 4 经期 
+@property(nonatomic,assign)NSInteger type;//  类型,0 步数 1 心率 2 体重 ,3 身高 4 肺活量
 @end
 
 NS_ASSUME_NONNULL_END

@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    self.navigationItem.title = @"健康日志详情";
+    self.navigationItem.title = @"跟踪报告详情";
     
     [self.tableView registerClass:[ALCJianKangRiZhiDetailOneCell class] forCellReuseIdentifier:@"ALCJianKangRiZhiDetailOneCell"];
     [self.tableView registerClass:[ALCJianKangRiZhiDetailCell class] forCellReuseIdentifier:@"cell"];
@@ -36,7 +36,7 @@
 //    }];
     
 
-    [self setFootView];
+//    [self setFootView];
     
 }
 
@@ -279,7 +279,7 @@
     
     
     if (indexPath.section == 0) {
-        cell.leftLB.text = @"病情描述";
+        cell.leftLB.text = @"谈话主题";
         if (self.detailModel != nil) {
             cell.titleLB.attributedText =  [self.detailModel.des getMutableAttributeStringWithFont:14 lineSpace:3 textColor:CharacterColor50];;
                    CGFloat hh = [self.detailModel.des getHeigtWithFontSize:14 lineSpace:3 width:ScreenW-115];
@@ -291,7 +291,7 @@
         }
        
     }else if (indexPath.section == 1) {
-        cell.leftLB.text = @"医嘱";
+        cell.leftLB.text = @"嘱咐";
         if (self.detailModel != nil) {
             cell.titleLB.attributedText = [self.detailModel.doctor_advice getMutableAttributeStringWithFont:14 lineSpace:3 textColor:CharacterColor50];;
             CGFloat hh = [self.detailModel.doctor_advice getHeigtWithFontSize:14 lineSpace:3 width:ScreenW-115];
@@ -303,7 +303,7 @@
         }
         
     }else {
-        cell.leftLB.text = @"用药处方";
+        cell.leftLB.text = @"学习方案";
         if (self.detailModel != nil) {
             
             CGFloat hh =  20;

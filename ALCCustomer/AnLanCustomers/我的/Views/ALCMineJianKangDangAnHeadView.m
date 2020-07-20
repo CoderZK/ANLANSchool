@@ -59,7 +59,7 @@
         UILabel * LB1 = [[UILabel alloc] initWithFrame:CGRectMake(15, 25, 70, 20)];
         LB1.font = kFont(15);
         LB1.textColor = CharacterColor50;
-        LB1.text = @"我的医生";
+        LB1.text = @"我的教师";
         [self.headViewTwo addSubview:LB1];
         
         self.numberLB = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(LB1.frame), 25, 150, 20)];

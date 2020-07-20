@@ -362,12 +362,12 @@
     
     cell.clipsToBounds  = YES;
     if (indexPath.row == 0) {
-        cell.leftLB.text = [NSString stringWithFormat:@"包含:%@ 的医院",self.serachWord];
-        cell.rightLB.text = [NSString stringWithFormat:@"全国%ld条医院结果",self.dataModel.institutionList.count];
+        cell.leftLB.text = [NSString stringWithFormat:@"包含:%@ 的学校",self.serachWord];
+        cell.rightLB.text = [NSString stringWithFormat:@"全国%ld条学校结果",self.dataModel.institutionList.count];
         cell.imgV.image = [UIImage imageNamed:@"ddoc"];
     }else if (indexPath.row == 1) {
-        cell.leftLB.text = [NSString stringWithFormat:@"包含:%@ 的医生",self.serachWord];
-        cell.rightLB.text = [NSString stringWithFormat:@"全国%ld条医生结果",self.dataModel.doctorList.count];
+        cell.leftLB.text = [NSString stringWithFormat:@"包含:%@ 的教师",self.serachWord];
+        cell.rightLB.text = [NSString stringWithFormat:@"全国%ld条教师结果",self.dataModel.doctorList.count];
         cell.imgV.image = [UIImage imageNamed:@"hos"];
     }else {
         cell.leftLB.text = [NSString stringWithFormat:@"包含:%@ 的文章",self.serachWord];

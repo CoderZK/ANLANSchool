@@ -102,6 +102,8 @@
     //    [self.lookBt setTitle:model.readCnt forState:UIControlStateNormal];
     if (model.readCnt.intValue > 10000) {
         [self.lookBt setTitle:[NSString stringWithFormat:@"%0.1f万",model.readCnt.floatValue/10000.0] forState:UIControlStateNormal];
+    }else {
+        [self.lookBt setTitle:[NSString stringWithFormat:@"%d",model.readCnt.intValue] forState:UIControlStateNormal];
     }
     self.webView.mj_y = CGRectGetMaxY(self.lookBt.frame) + 5;
     

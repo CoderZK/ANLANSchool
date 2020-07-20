@@ -59,6 +59,12 @@
         self.navigationItem.title = @"体重";
     }else if (self.type == 3) {
         self.navigationItem.title = @"血压";
+    }else if (self.type == 4) {
+        self.navigationItem.title = @"身高";
+    }else if (self.type == 5) {
+        self.navigationItem.title = @"视力";
+    }else if (self.type == 6) {
+        self.navigationItem.title = @"肺活量";
     }
     
     
@@ -205,6 +211,30 @@
         self.headV.rightBottomLB.text = @"舒张压";
         
         
+    }else if (self.type == 4) {
+        
+        self.headV.showNumber = 1;
+        self.headV.centerTopLB.text = [NSString stringWithFormat:@"%@kg",[[self getnumberArr] firstObject]];
+        self.headV.centerBottomLB.text = @"平均体重";
+        
+        
+        
+    }else if (self.type == 5) {
+        
+        
+        self.headV.showNumber = 2;
+        self.headV.leftTopLB.text = [NSString stringWithFormat:@"%@",[[self getnumberArr] firstObject]];
+        self.headV.leftBottomLB.text = @"左眼视力";
+        self.headV.rightTopLB.text = [NSString stringWithFormat:@"%@",[[self getnumberArr] lastObject]];
+        self.headV.rightBottomLB.text = @"右眼视力";
+        
+        
+    }else if (self.type ==6 ) {
+        
+        self.headV.showNumber = 1;
+        self.headV.centerTopLB.text = [NSString stringWithFormat:@"%@kg",[[self getnumberArr] firstObject]];
+        self.headV.centerBottomLB.text = @"平均肺活量";
+
     }
     
     

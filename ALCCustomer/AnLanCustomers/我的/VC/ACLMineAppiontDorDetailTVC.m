@@ -23,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"预约医生详情";
+    self.navigationItem.title = @"预约教师详情";
     [self.tableView registerNib:[UINib nibWithNibName:@"ALCMineAppionDorOneCell" bundle:nil] forCellReuseIdentifier:@"cellOne"];
     [self.tableView registerNib:[UINib nibWithNibName:@"ALCMineAppionDorTwoCell" bundle:nil] forCellReuseIdentifier:@"cellTwo"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -390,15 +390,15 @@
         cell.leftLB5.hidden = cell.leftLB5.hidden = cell.rightLB6.hidden = cell.rightLB5.hidden = YES;
         
         if (self.isHot) {
-            cell.leftLB1.text = @"就诊项目";
+            cell.leftLB1.text = @"咨询项目";
             cell.rightLB1.text = self.dataModel.projectName;
         }else {
-            cell.leftLB1.text = @"就诊专家";
+            cell.leftLB1.text = @"咨询专家";
             cell.rightLB1.text = [NSString stringWithFormat:@"%@ (%@) %@",self.dataModel.doctorName,self.dataModel.level,self.dataModel.departmentName];;
         }
         
-        cell.leftLB2.text = @"就诊医院";
-        cell.leftLB3.text = @"就诊人";
+        cell.leftLB2.text = @"咨询学校";
+        cell.leftLB3.text = @"用户";
         cell.leftLB4.text = @"手机号";
         
         cell.rightLB2.text = self.dataModel.institutionName;
@@ -416,7 +416,7 @@
                 cell.leftLB4.hidden = cell.leftLB5.hidden = cell.leftLB6.hidden  = cell.rightLB4.hidden = cell.rightLB5.hidden = cell.rightLB6.hidden =  YES;
                 
                 cell.leftLB1.text = @"领号时间";
-                cell.leftLB2.text = @"就诊地点";
+                cell.leftLB2.text = @"咨询地点";
                 cell.leftLB3.text = @"门诊类型";
 
                 

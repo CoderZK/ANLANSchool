@@ -39,7 +39,7 @@
 - (void)setDataArray:(NSArray *)dataArray {
     _dataArray = dataArray;
     CGFloat ww = 70;
-    CGFloat space = (self.mj_w - 280)/5;
+    CGFloat space = (self.mj_w - dataArray.count * 70)/(dataArray.count + 1);
     
     for (int i = 0 ; i < dataArray.count; i++) {
         

@@ -41,14 +41,15 @@
     self.nameTwoLB.text = model.level;
     self.addressLB.text = model.institutionName;
     self.typeLB3.text = model.departmentName;
-    self.yuyueLB.text = [NSString stringWithFormat:@"预约量: %@",model.appointmentCnt];
+    self.yuyueLB.text = [NSString stringWithFormat:@"咨询量: %@",model.consultationCnt];
     if ([model.appointmentCnt integerValue] > 10000) {
-        self.yuyueLB.text = [NSString stringWithFormat:@"预约量: %0.1f万",[model.appointmentCnt integerValue]/10000.0];
+        self.yuyueLB.text = [NSString stringWithFormat:@"咨询量: %0.1f万",[model.consultationCnt integerValue]/10000.0];
     }
-    self.zixuanLB.text = [NSString stringWithFormat:@"咨询量: %@",model.consultationCnt];
-    if ([model.consultationCnt integerValue] > 10000) {
-        self.zixuanLB.text = [NSString stringWithFormat:@"咨询量: %0.1f万",[model.consultationCnt integerValue]/10000.0];
-    }
+    self.zixuanLB.text = @"";
+//    self.zixuanLB.text = [NSString stringWithFormat:@"咨询量: %@",model.consultationCnt];
+//    if ([model.consultationCnt integerValue] > 10000) {
+//        self.zixuanLB.text = [NSString stringWithFormat:@"咨询量: %0.1f万",[model.consultationCnt integerValue]/10000.0];
+//    }
     
     NSArray * arr = [model.goodArea componentsSeparatedByString:@","];
     self.typeLB4.hidden = self.typeLB5.hidden = self.typeLB6.hidden = YES;

@@ -18,10 +18,10 @@
 @property(nonatomic,strong)UITextField *searchTF;
 @property(nonatomic,strong)UIButton *editBt;
 @property(nonatomic,strong)NSString *prnvinceStr,*cityStr,*searchWord,*prnviceID,*cityID;
-@property(nonatomic,assign)NSInteger sortType; // 必须（1距离 2医生预约量 3项目预约量）
+@property(nonatomic,assign)NSInteger sortType; // 必须（1距离 2教师预约量 3项目预约量）
 @property(nonatomic,assign)NSInteger sort; //（1默认顺序（由近及远、由多到少）2反序）
 @property(nonatomic,strong)NSString *typeId;//类型
-@property(nonatomic,strong)NSString *levelId;//医院等级
+@property(nonatomic,strong)NSString *levelId;//学校等级
 @property(nonatomic,strong)ALCSearchHospitalView *showSearchV;
 @property(nonatomic,strong)NSMutableArray<ALMessageModel *> *typeArr,*levelArr;
 @property(nonatomic,assign)NSInteger page;

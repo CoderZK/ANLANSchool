@@ -150,7 +150,7 @@
     UILabel * lb2 =[[UILabel alloc] initWithFrame:CGRectMake(0, 70 , 80, 20)];
     lb2.font =[UIFont systemFontOfSize:15];
     lb2.textColor = CharacterColor50;
-    lb2.text = @"问诊消息";
+    lb2.text = @"咨询消息";
     lb2.textAlignment = NSTextAlignmentCenter;
     [button2 addSubview:lb2];
     

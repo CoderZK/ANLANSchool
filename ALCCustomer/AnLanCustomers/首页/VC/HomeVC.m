@@ -330,20 +330,23 @@
         //健康信息
         return 20+45 + 4*80;
     }else if (indexPath.row == 1) {
-        //健康日志
+        //跟踪报告
+        
+        return 0;
+        
         if (self.dataModel.doctorAppointment.count == 0) {
             return 0;
         }
         return 20+45 + self.dataModel.doctorAppointment.count*79;
     }else if (indexPath.row == 2) {
-        //推荐医生
+        //教师推荐
         if (self.dataModel.recommendDoctorList.count == 0) {
             return 0;
         }
         
         return 20+45 + self.dataModel.recommendDoctorList.count* 134;
     }else if (indexPath.row == 3) {
-        //曾经就诊机构
+        //曾经咨询机构
         if (self.dataModel.appoinmentHistory.count == 0) {
             return 0;
         }
@@ -368,13 +371,13 @@
         cell.model = self.dataModel.healthdata;
         cell.lineDateModel = self.lineDataModel;
     }else if (indexPath.row == 1) {
-        cell.titleStr = @"健康日志";
+        cell.titleStr = @"跟踪报告";
         cell.dataArray = self.dataModel.doctorAppointment;
     }else  if (indexPath.row == 2){
-        cell.titleStr = @"推荐医生";
+        cell.titleStr = @"教师推荐";
         cell.dataArray = self.dataModel.recommendDoctorList;
     }else  if (indexPath.row == 3){
-        cell.titleStr = @"曾经就诊机构";
+        cell.titleStr = @"曾经就读学校";
         cell.dataArray = self.dataModel.appoinmentHistory;
     }else  if (indexPath.row == 4){
         cell.titleStr = @"推荐文章";
@@ -444,7 +447,7 @@
 
 #pragma mark ---- 点击cell -----
 - (void)didClickALCHomeCell:(ALCHomeCell *)cell withIndex:(NSInteger)index isClickHead:(BOOL)isClickHead {
-    //0@"身体数据";1@"健康日志";2@"推荐医生";3@"曾经就诊机构";4@"推荐文章";
+    //0@"身体数据";1@"跟踪报告";2@"教师推荐";3@"曾经咨询机构";4@"推荐文章";
     
     NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
     if (isClickHead) {

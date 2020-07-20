@@ -82,27 +82,27 @@
 + (NSString * )app_forgetPasswordURL{
     return [NSString stringWithFormat:@"%@%@",URLOne,@"app_forgetPassword"];
 }
-/** 医院列表*/
+/** 学校列表*/
 + (NSString * )app_findInstitutionListURL{
     return [NSString stringWithFormat:@"%@%@",URLOne,@"app_findInstitutionList"];
 }
-/** 医生列表 */
+/** 教师列表 */
 + (NSString * )app_findDoctorListURL {
     return [NSString stringWithFormat:@"%@%@",URLOne,@"app_findDoctorList"];
 }
-/** 医院主页*/
+/** 学校主页*/
 + (NSString * )app_getInstitutionIndexPageURL{
     return [NSString stringWithFormat:@"%@%@",URLOne,@"app_getInstitutionIndexPage"];
 }
-/** 医院概况*/
+/** 学校概况*/
 + (NSString * )user_getInstitutionDetailURL{
     return [NSString stringWithFormat:@"%@%@",URLOne,@"user_getInstitutionDetail"];
 }
-/** 医院下的医生列表 */
+/** 学校下的教师列表 */
 + (NSString * )app_findDoctorUnderInstitutionURL{
     return [NSString stringWithFormat:@"%@%@",URLOne,@"app_findDoctorUnderInstitution"];
 }
-/** 医生详情 */
+/** 教师详情 */
 + (NSString * )user_getDoctorIndexPageURL{
     return [NSString stringWithFormat:@"%@%@",URLOne,@"user_getDoctorIndexPage"];
 }
@@ -110,7 +110,7 @@
 + (NSString * )app_findAllRecommendProjectListURL{
     return [NSString stringWithFormat:@"%@%@",URLOne,@"app_findAllRecommendProjectList"];
 }
-/** 医院下的所有项目*/
+/** 学校下的所有项目*/
 + (NSString * )app_getAllProjectURL{
     return [NSString stringWithFormat:@"%@%@",URLOne,@"app_getAllProject"];
 }
@@ -185,7 +185,7 @@
      return [NSString stringWithFormat:@"%@%@",URLOne,@"user_recordMenstrual"];
 }
 
-/** 健康日志列表*/
+/** 跟踪报告列表*/
 + (NSString * )user_findAllDoctorAppointmentListURL{
     return [NSString stringWithFormat:@"%@%@",URLOne,@"user_findAllDoctorAppointmentList"];
 }
@@ -193,12 +193,12 @@
 + (NSString * )user_findAllVoiceDetailListURL{
     return [NSString stringWithFormat:@"%@%@",URLOne,@"user_findAllVoiceDetailList"];
 }
-/**健康日志隐私*/
+/**跟踪报告隐私*/
 +(NSString *)user_getVoiceDetailPrivacyURL{
     return [NSString stringWithFormat:@"%@%@",URLOne,@"user_getVoiceDetailPrivacy"];
 }
 
-/** 预约医生*/
+/** 预约教师*/
 +(NSString *)user_findAppointDoctorsURL{
      return [NSString stringWithFormat:@"%@%@",URLOne,@"user_findAppointDoctors"];
 }
@@ -216,7 +216,7 @@
 +(NSString *)user_findSystemMessageURL{
     return [NSString stringWithFormat:@"%@%@",URLOne,@"user_findSystemMessage"];
 }
-/** 医生搜索*/
+/** 教师搜索*/
 +(NSString *)user_searchDoctorsURL{
     return [NSString stringWithFormat:@"%@%@",URLOne,@"user_searchDoctors"];
 }
@@ -264,7 +264,7 @@
     return [NSString stringWithFormat:@"%@%@",URLOne,@"user_cancelOnlineAppointmentProject"];
 }
 
-/** 首页更多  condition 1 医生 2文章*/
+/** 首页更多  condition 1 教师 2文章*/
 + (NSString * )user_moreDataURL{
     return [NSString stringWithFormat:@"%@%@",URLOne,@"user_moreData"];
 }
@@ -280,7 +280,7 @@
 +(NSString *)user_refundProjectURL{
     return [NSString stringWithFormat:@"%@%@",URLOne,@"user_refundProject"];
 }
-/*健康提醒*/
+/*提醒*/
 +(NSString *)user_HealRemindURL{
     return [NSString stringWithFormat:@"%@%@",URLOne,@"user_HealRemind"];
 }
@@ -302,12 +302,12 @@
 }
 
 #pragma mark ----个人信息部分  -------
-/*我的健康日志*/
+/*我的跟踪报告*/
 +(NSString *)user_findMyDoctorAppointmentURL {
     return [NSString stringWithFormat:@"%@%@",URLOne,@"user_findMyDoctorAppointment"];
 }
 
-/*我的预约医生*/
+/*我的预约教师*/
 +(NSString *)user_findMyAllDoctorAppointmentURL {
     return [NSString stringWithFormat:@"%@%@",URLOne,@"user_findMyAllDoctorAppointment"];
 }
@@ -369,11 +369,11 @@
 +(NSString *)user_delArticCollectionURL{
     return [NSString stringWithFormat:@"%@%@",URLOne,@"user_delArticCollection"];
 }
-/*医生收藏*/
+/*教师收藏*/
 +(NSString *)user_collectDoctorURL{
     return [NSString stringWithFormat:@"%@%@",URLOne,@"user_collectDoctor"];
 }
-/*取消医生收藏*/
+/*取消教师收藏*/
 +(NSString *)user_delDoctorCollectionURL{
     return [NSString stringWithFormat:@"%@%@",URLOne,@"user_delDoctorCollection"];
 }

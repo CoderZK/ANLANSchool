@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.dataArray = @[].mutableCopy;
-    self.navigationItem.title = @"我的医生";
+    self.navigationItem.title = @"我的教师";
     
     [self.tableView registerNib:[UINib nibWithNibName:@"ALCMineDorCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     NSMutableArray<ALMessageModel *> * titelArr = @[].mutableCopy;

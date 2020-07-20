@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ALCHomeCell : UITableViewCell
 @property(nonatomic,strong)NSMutableArray<ALMessageModel *> *dataArray;
 @property(nonatomic,strong)NSString *titleStr;
-@property(nonatomic,assign)NSInteger typeCell; // 0 身体数据cell ,1 健康数据cell 2推荐医生cell 3 为你推荐 4 曾经急诊的机构
+@property(nonatomic,assign)NSInteger typeCell; // 0 身体数据cell ,1 健康数据cell 2教师推荐cell 3 为你推荐 4 曾经急诊的机构
 
 @property(nonatomic,assign)BOOL isHiddenMoreImagV;
 

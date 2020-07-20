@@ -52,8 +52,10 @@
     
     [SVProgressHUD show];
     NSMutableDictionary * dict = @{}.mutableCopy;
-    dict[@"marriageStatus"] = @(self.v1.selectIndex+1);
-    dict[@"birthStatus"] = @(self.v2.selectIndex+1);
+//    dict[@"marriageStatus"] = @(self.v1.selectIndex+1);
+//    dict[@"birthStatus"] = @(self.v2.selectIndex+1);
+    dict[@"marriageStatus"] = @(1);
+    dict[@"birthStatus"] = @(1);
     dict[@"operateHurt"] = self.v3.TV.text;
     dict[@"familyHistory"] = self.v4.TV.text;
     dict[@"drugAllergy"] = self.v5.TV.text;
@@ -105,51 +107,51 @@
     ll.font =[UIFont systemFontOfSize:14];
     ll.textColor = CharacterColor50;
     [backV addSubview:ll];
-    ll.text = @"信息仅供主治医生查看,请认真填写";
+    ll.text = @"信息仅供教师查看,请认真填写";
     
-    ALCChooseJianKangVIew * view1 = [[ALCChooseJianKangVIew alloc] initWithFrame:CGRectMake(0, 50, ScreenW, 20)];
-    NSArray * arr = @[@"已婚",@"未婚",@"离异",@"丧偶"];
-    NSMutableArray<ALMessageModel *> * arrTwo = @[].mutableCopy;
-    for (int i  = 0 ; i < arr.count; i++) {
-        ALMessageModel * model = [[ALMessageModel alloc] init];
-        model.name = arr[i];
-        [arrTwo addObject:model];
-    }
-   
-    view1.dataArray = arrTwo;
-    if (self.dataModel.marriageStatus.length > 0) {
-           view1.selectIndex = [self.dataModel.marriageStatus integerValue] - 1;
-       }
-    view1.titleOneStr = @"婚姻状况";
-    view1.isOnlySelectOne = YES;
-    view1.isShowTV = NO;
-    view1.mj_h = view1.hh;
-    [self.headV addSubview:view1];
-    self.v1 = view1;
+//    ALCChooseJianKangVIew * view1 = [[ALCChooseJianKangVIew alloc] initWithFrame:CGRectMake(0, 50, ScreenW, 20)];
+//    NSArray * arr = @[@"已婚",@"未婚",@"离异",@"丧偶"];
+//    NSMutableArray<ALMessageModel *> * arrTwo = @[].mutableCopy;
+//    for (int i  = 0 ; i < arr.count; i++) {
+//        ALMessageModel * model = [[ALMessageModel alloc] init];
+//        model.name = arr[i];
+//        [arrTwo addObject:model];
+//    }
+//
+//    view1.dataArray = arrTwo;
+//    if (self.dataModel.marriageStatus.length > 0) {
+//           view1.selectIndex = [self.dataModel.marriageStatus integerValue] - 1;
+//       }
+//    view1.titleOneStr = @"婚姻状况";
+//    view1.isOnlySelectOne = YES;
+//    view1.isShowTV = NO;
+//    view1.mj_h = view1.hh;
+//    [self.headV addSubview:view1];
+//    self.v1 = view1;
+//
+//
+//    ALCChooseJianKangVIew * view2 = [[ALCChooseJianKangVIew alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(view1.frame), ScreenW, 20)];
+//    NSArray * arr2 = @[@"未生育",@"备孕期",@"怀孕期",@"已生育"];
+//    NSMutableArray<ALMessageModel *> * arrTwo2 = @[].mutableCopy;
+//    for (int i  = 0 ; i < arr2.count; i++) {
+//        ALMessageModel * model = [[ALMessageModel alloc] init];
+//        model.name = arr2[i];
+//        [arrTwo2 addObject:model];
+//    }
+//
+//    view2.dataArray = arrTwo2;
+//    if (self.dataModel.birthStatus.length > 0) {
+//          view2.selectIndex = [self.dataModel.birthStatus integerValue] - 1;
+//      }
+//    view2.titleOneStr = @"生育状态";
+//    view2.isShowTV = NO;
+//    view2.isOnlySelectOne = YES;
+//    view2.mj_h = view2.hh;
+//    [self.headV addSubview:view2];
+//
+//    self.v2 = view2;
     
-    
-    ALCChooseJianKangVIew * view2 = [[ALCChooseJianKangVIew alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(view1.frame), ScreenW, 20)];
-    NSArray * arr2 = @[@"未生育",@"备孕期",@"怀孕期",@"已生育"];
-    NSMutableArray<ALMessageModel *> * arrTwo2 = @[].mutableCopy;
-    for (int i  = 0 ; i < arr2.count; i++) {
-        ALMessageModel * model = [[ALMessageModel alloc] init];
-        model.name = arr2[i];
-        [arrTwo2 addObject:model];
-    }
-  
-    view2.dataArray = arrTwo2;
-    if (self.dataModel.birthStatus.length > 0) {
-          view2.selectIndex = [self.dataModel.birthStatus integerValue] - 1;
-      }
-    view2.titleOneStr = @"生育状态";
-    view2.isShowTV = NO;
-    view2.isOnlySelectOne = YES;
-    view2.mj_h = view2.hh;
-    [self.headV addSubview:view2];
-    
-    self.v2 = view2;
-    
-    ALCChooseJianKangVIew * view3 = [[ALCChooseJianKangVIew alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(view2.frame), ScreenW, 20)];
+    ALCChooseJianKangVIew * view3 = [[ALCChooseJianKangVIew alloc] initWithFrame:CGRectMake(0, 50, ScreenW, 20)];
     
     view3.dataArray = @[];
     view3.titleOneStr = @"手术活外伤";

@@ -67,17 +67,17 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString * )app_interestURL;
 /** 忘记密码*/
 + (NSString * )app_forgetPasswordURL;
-/** 医院列表*/
+/** 学校列表*/
 + (NSString * )app_findInstitutionListURL;
-/** 医生列表 */
+/** 教师列表 */
 + (NSString * )app_findDoctorListURL;
-/** 医院主页*/
+/** 学校主页*/
 + (NSString * )app_getInstitutionIndexPageURL;
-/** 医院概况*/
+/** 学校概况*/
 + (NSString * )user_getInstitutionDetailURL;
-/** 医院下的医生列表 */
+/** 学校下的教师列表 */
 + (NSString * )app_findDoctorUnderInstitutionURL;
-/** 医生详情 */
+/** 教师详情 */
 + (NSString * )user_getDoctorIndexPageURL;
 /** 项目列表*/
 + (NSString * )app_findAllRecommendProjectListURL;
@@ -115,17 +115,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**经期记录*/
 + (NSString * )user_recordMenstrualURL;
-/** 健康日志列表*/
+/** 跟踪报告列表*/
 + (NSString * )user_findAllDoctorAppointmentListURL;
 
 
-/*我的预约医生*/
+/*我的预约教师*/
 +(NSString *)user_findMyAllDoctorAppointmentURL;
-/** 健康日志*/
+/** 跟踪报告*/
 +(NSString *)user_findAppointDoctorsURL;
 /** 用户问诊详情*/
 + (NSString * )user_findAllVoiceDetailListURL;
-/**健康日志隐私*/
+/**跟踪报告隐私*/
 +(NSString *)user_getVoiceDetailPrivacyURL;
 
 /** 选择隐私等级*/
@@ -134,7 +134,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(NSString *)user_findAppointedInstitutionsURL;
 /** 系统消息*/
 +(NSString *)user_findSystemMessageURL;
-/** 医生搜索*/
+/** 教师搜索*/
 +(NSString *)user_searchDoctorsURL;
 /** 聊天记录*/
 +(NSString *)user_findSessionsURL;
@@ -158,7 +158,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(NSString *)user_doProjectAppointmentURL;
 /**项目退款*/
 +(NSString *)user_refundProjectURL;
-/*健康提醒*/
+/*提醒*/
 +(NSString *)user_HealRemindURL;
 /*日历详情*/
 +(NSString *)user_getUserCalenderDetailURL;
@@ -173,7 +173,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(NSString *)user_cancelOnlineAppointmentProjectURL;
 
 #pragma mark ----个人信息部分  -------
-/*我的医生预约*/
+/*我的教师预约*/
 +(NSString *)user_findMyDoctorAppointmentURL;
 /*预约详情*/
 +(NSString *)user_getMyDoctorAppointmentDetailURL;
@@ -200,9 +200,9 @@ NS_ASSUME_NONNULL_BEGIN
 +(NSString *)user_collectArticleURL;
 /*取消文章收藏*/
 +(NSString *)user_delArticCollectionURL;
-/*医生收藏*/
+/*教师收藏*/
 +(NSString *)user_collectDoctorURL;
-/*取消医生收藏*/
+/*取消教师收藏*/
 +(NSString *)user_delDoctorCollectionURL;
 /*机构收藏*/
 +(NSString *)user_collectInstitutionURL;
@@ -215,10 +215,10 @@ NS_ASSUME_NONNULL_BEGIN
 +(NSString *)user_delRecentSearchURL;
 /*操作日志*/
 +(NSString *)user_markCalenderURL;
-/** 医院下的所有项目*/
+/** 学校下的所有项目*/
 + (NSString * )app_getAllProjectURL;
 
-/** 首页更多  condition 1 医生 2文章*/
+/** 首页更多  condition 1 教师 2文章*/
 + (NSString * )user_moreDataURL;
 + (NSString * )user_getCalenderDetailURL;
 
@@ -226,7 +226,7 @@ NS_ASSUME_NONNULL_BEGIN
 #define user_addMyFamilyMember URLOne@"user_addMyFamilyMember"
 /** 获取家庭联系人列表 */
 #define user_getMyFamilyMember URLOne@"user_getMyFamilyMember"
-/** 获取就诊人列表 */
+/** 获取用户列表 */
 #define user_choosePatient URLOne@"user_choosePatient"
 
 /** 获取首页折线图信息 */

@@ -17,13 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"医院列表";
+    self.navigationItem.title = @"学校列表";
     
     
     [self.tableView registerNib:[UINib nibWithNibName:@"ALCTiaoLiOneCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
 }
+
+
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -46,6 +48,7 @@
     ALMessageModel * model = self.dataArray[indexPath.row];
     cell.model = model;
     cell.rightLB.hidden = YES;
+    
     return cell;
     
 }

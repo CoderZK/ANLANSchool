@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"问诊消息";
+    self.navigationItem.title = @"咨询消息";
     if (self.isNewFriend) {
         self.navigationItem.title = @"新朋友";
         UIButton * submitBtn = [[UIButton alloc] initWithFrame:CGRectMake(15, 200, 44, 44)];

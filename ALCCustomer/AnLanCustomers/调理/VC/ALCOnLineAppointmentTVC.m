@@ -61,7 +61,7 @@
         return;
     }
     if (self.name.length == 0) {
-        [SVProgressHUD showErrorWithStatus:@"请选择就诊人员"];
+        [SVProgressHUD showErrorWithStatus:@"请选择用户员"];
         return;
     }
     if (!isDidLogin) {
@@ -143,7 +143,7 @@
         cell.rightLB.hidden = NO;
         
         if (indexPath.row == 1) {
-            cell.leftLB.text = @"选择就诊人";
+            cell.leftLB.text = @"选择用户";
             cell.rightLB.text = self.name;
             cell.lineV.hidden = NO;
         }else {

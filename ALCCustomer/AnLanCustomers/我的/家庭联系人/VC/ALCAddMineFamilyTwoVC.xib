@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,8 +27,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tb0-yZ-Ogp">
-                    <rect key="frame" x="0.0" y="44" width="414" height="350"/>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tb0-yZ-Ogp">
+                    <rect key="frame" x="0.0" y="44" width="414" height="250"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qMR-sY-Gac">
                             <rect key="frame" x="15" y="49.5" width="384" height="0.5"/>
@@ -334,15 +334,15 @@
                         <constraint firstItem="ut7-Xy-CVr" firstAttribute="leading" secondItem="Tb0-yZ-Ogp" secondAttribute="leading" constant="15" id="p8h-2v-maJ"/>
                         <constraint firstItem="UlS-ab-jdH" firstAttribute="top" secondItem="qMR-sY-Gac" secondAttribute="bottom" constant="10" id="qWQ-h7-90c"/>
                         <constraint firstAttribute="trailing" secondItem="JD0-5p-Uwu" secondAttribute="trailing" constant="15" id="ruw-x0-hjF"/>
-                        <constraint firstAttribute="height" constant="350" id="weY-fT-vey"/>
+                        <constraint firstAttribute="height" constant="250" id="weY-fT-vey"/>
                         <constraint firstItem="qMR-sY-Gac" firstAttribute="leading" secondItem="Tb0-yZ-Ogp" secondAttribute="leading" constant="15" id="x1w-ur-an4"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCU-fX-KgP">
-                    <rect key="frame" x="0.0" y="404" width="414" height="50"/>
+                    <rect key="frame" x="0.0" y="304" width="414" height="50"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置默认就诊人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2Z-Ss-Vgl">
-                            <rect key="frame" x="15" y="15" width="100" height="19.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置默认学生" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2Z-Ss-Vgl">
+                            <rect key="frame" x="15" y="15" width="86" height="19.5"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="19.5" id="KEv-lA-awm"/>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="pIg-zX-8TI"/>

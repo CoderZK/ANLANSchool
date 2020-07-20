@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"曾就诊机构";
+    self.navigationItem.title = @"曾就读学校";
     if (self.isWenZhang) {
         self.navigationItem.title = @"文章推荐";
     }

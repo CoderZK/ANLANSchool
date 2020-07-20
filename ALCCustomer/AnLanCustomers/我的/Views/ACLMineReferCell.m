@@ -23,7 +23,7 @@
 
 - (void)setModel:(ALMessageModel *)model {
     _model = model;
-    self.nameLB.text = [NSString stringWithFormat:@"咨询医生:%@",model.name];
+    self.nameLB.text = [NSString stringWithFormat:@"咨询教师:%@",model.name];
     self.bNameLB.text = model.lastSessionTime;
     self.addressLB.text = model.institutionName;
 }

@@ -104,7 +104,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"医院概况";
+    self.navigationItem.title = @"学校概况";
     
     UIButton * submitBtn = [[UIButton alloc] initWithFrame:CGRectMake(15, 200, 60, 44)];
     submitBtn.layer.cornerRadius = 22;
@@ -202,7 +202,7 @@
         view.leftLB.text = @"重点科室";
     }else if (section == 2) {
         
-        view.leftLB.text = @"医院简介";
+        view.leftLB.text = @"学校简介";
     }else if (section == 3) {
         view.leftLB.text = @"乘车路线";
     }
@@ -218,6 +218,7 @@
         
         ALCHospitalDetailOneCell * cell =[tableView dequeueReusableCellWithIdentifier:@"ALCHospitalDetailOneCell" forIndexPath:indexPath];
         cell.model = self.dataModel;
+        cell.leftLBThree.hidden = YES;
         [cell.daoHangBt addTarget:self action:@selector(daohangAction) forControlEvents:UIControlEventTouchUpInside];
         return cell;
     }else if (indexPath.section == 1) {
@@ -389,7 +390,7 @@
         [[UIApplication sharedApplication] openURL:r];
     }else if ([str isEqualToString:@"苹果地图"]) {
         
-        NSString *urlString = [[NSString stringWithFormat:@"http://maps.apple.com/?q=医院&sll=%f,%f&z=10&t=s",self.dataModel.latitude,self.dataModel.longitude] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSString *urlString = [[NSString stringWithFormat:@"http://maps.apple.com/?q=学校&sll=%f,%f&z=10&t=s",self.dataModel.latitude,self.dataModel.longitude] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         
         NSURL *r = [NSURL URLWithString:urlString];
         
@@ -485,10 +486,10 @@
             
             if ([button.currentImage isEqual:[UIImage imageNamed:@"jkgl48"]]) {
                 //未收藏
-                [SVProgressHUD showSuccessWithStatus:@"收藏医院成功"];
+                [SVProgressHUD showSuccessWithStatus:@"收藏学校成功"];
                 [button setImage:[UIImage imageNamed:@"jkgl47"] forState:UIControlStateNormal];
             }else {
-                [SVProgressHUD showSuccessWithStatus:@"取消医院收藏"];
+                [SVProgressHUD showSuccessWithStatus:@"取消学校收藏"];
                 [button setImage:[UIImage imageNamed:@"jkgl48"] forState:UIControlStateNormal];
             }
             

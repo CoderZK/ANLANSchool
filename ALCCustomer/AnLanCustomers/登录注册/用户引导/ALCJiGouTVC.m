@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    self.navigationItem.title = @"选择机构";
+    self.navigationItem.title = @"选择学校";
     
     
     [self setheadV];
@@ -71,14 +71,14 @@
     lb1.textAlignment = NSTextAlignmentCenter;
     lb1.textColor = CharacterColor50;
     lb1.font = [UIFont systemFontOfSize:16 weight:0.2];
-    lb1.text = @"您曾经就诊过的机构是？";
+    lb1.text = @"您目前就读的学校是？";
     [headV addSubview:lb1];
     
     UILabel * lb2 = [[UILabel alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(lb1.frame) + 5, ScreenW - 20, 20)];
     lb2.textAlignment = NSTextAlignmentCenter;
     lb2.textColor = CharacterBlack100;
     lb2.font = kFont(14);
-    lb2.text = @"方便我们推荐相关机构信息，请正确选择。";
+    lb2.text = @"方便我们推荐相关学校信息，请正确选择。";
     [headV addSubview:lb2];
     
     
@@ -90,45 +90,45 @@
     _pickerView.backgroundColor = [UIColor whiteColor];
     [headV addSubview:_pickerView];
     
-   
-    UILabel * lb3 = [[UILabel alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(self.pickerView.frame) + 20, ScreenW - 20, 20)];
-    lb3.textAlignment = NSTextAlignmentCenter;
-    lb3.textColor = CharacterColor50;
-    lb3.font = [UIFont systemFontOfSize:16 weight:0.2];
-    lb3.text = @"您曾经就这过的项目是";
-    [headV addSubview:lb3];
+//
+//    UILabel * lb3 = [[UILabel alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(self.pickerView.frame) + 20, ScreenW - 20, 20)];
+//    lb3.textAlignment = NSTextAlignmentCenter;
+//    lb3.textColor = CharacterColor50;
+//    lb3.font = [UIFont systemFontOfSize:16 weight:0.2];
+//    lb3.text = @"您曾经就这过的项目是";
+//    [headV addSubview:lb3];
+//
+//    UILabel * lb4 = [[UILabel alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(lb3.frame) + 5, ScreenW - 20, 20)];
+//    lb4.textAlignment = NSTextAlignmentCenter;
+//    lb4.textColor = CharacterBlack100;
+//    lb4.font = kFont(14);
+//    lb4.text = @"方便我们推荐相关项目信息，可多选。";
+//    [headV addSubview:lb4];
+//
+//
+//    NSArray * arr = @[@"面部轮廓",@"眼部",@"鼻部",@"胸部",@"口腔齿科"];
+//    NSMutableArray<ALMessageModel *> * arrTwo = @[].mutableCopy;
+//    for (int i  = 0 ; i < arr.count; i++) {
+//        ALMessageModel * model = [[ALMessageModel alloc] init];
+//        model.name = arr[i];
+//        [arrTwo addObject:model];
+//    }
+//    ALCMineDorterView * dortV = [[ALCMineDorterView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(lb4.frame) +15, ScreenW, 10)];
+//    dortV.isNoSelectOne = NO;
+//    dortV.dataArray = arrTwo;
+//    dortV.mj_h = dortV.hh;
+//
+//    [headV addSubview:dortV];
+//
+//    UITextField * tf = [[UITextField alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(dortV.frame) + 10 , ScreenW - 30, 30)];
+//    tf.placeholder = @"请填写具体项目名称";
+//    tf.font = kFont(14);
+//    UIView * lineV = [[UIView alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(tf.frame)+2, ScreenW - 30, 0.6)];
+//    lineV.backgroundColor = lineBackColor;
+//    [headV addSubview:tf];
+//    [headV addSubview:lineV];
     
-    UILabel * lb4 = [[UILabel alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(lb3.frame) + 5, ScreenW - 20, 20)];
-    lb4.textAlignment = NSTextAlignmentCenter;
-    lb4.textColor = CharacterBlack100;
-    lb4.font = kFont(14);
-    lb4.text = @"方便我们推荐相关项目信息，可多选。";
-    [headV addSubview:lb4];
-    
-    
-    NSArray * arr = @[@"面部轮廓",@"眼部",@"鼻部",@"胸部",@"口腔齿科"];
-    NSMutableArray<ALMessageModel *> * arrTwo = @[].mutableCopy;
-    for (int i  = 0 ; i < arr.count; i++) {
-        ALMessageModel * model = [[ALMessageModel alloc] init];
-        model.name = arr[i];
-        [arrTwo addObject:model];
-    }
-    ALCMineDorterView * dortV = [[ALCMineDorterView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(lb4.frame) +15, ScreenW, 10)];
-    dortV.isNoSelectOne = NO;
-    dortV.dataArray = arrTwo;
-    dortV.mj_h = dortV.hh;
-    
-    [headV addSubview:dortV];
-    
-    UITextField * tf = [[UITextField alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(dortV.frame) + 10 , ScreenW - 30, 30)];
-    tf.placeholder = @"请填写具体项目名称";
-    tf.font = kFont(14);
-    UIView * lineV = [[UIView alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(tf.frame)+2, ScreenW - 30, 0.6)];
-    lineV.backgroundColor = lineBackColor;
-    [headV addSubview:tf];
-    [headV addSubview:lineV];
-    
-    headV.mj_h = CGRectGetMaxY(lineV.frame) + 20;
+    headV.mj_h = CGRectGetMaxY(self.pickerView.frame) + 20;
     
     self.tableView.tableHeaderView = headV;
     

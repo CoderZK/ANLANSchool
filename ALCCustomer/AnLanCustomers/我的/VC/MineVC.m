@@ -213,13 +213,13 @@
     self.headV.mj_h =1000;
     self.tableView.tableHeaderView = self.headV;
     
-    NSArray * arrone = @[@"我的预约",@"我的咨询",@"我的订单",@"我的收藏"];
-    NSArray * arrtwo = @[@"家庭联系人",@"会员专区",@"体检中心",@"保险产品"];
+    NSArray * arrone = @[@"我的咨询",@"我的收藏"];
+    NSArray * arrtwo = @[@"家庭联系人",@"体检中心",@"保险产品"];
     
     
     ALCMineViewOne * mineOneV = [[ALCMineViewOne alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(imgVOne.frame) - 25, ScreenW - 30, 100)];
     mineOneV.tag = 100;
-    mineOneV.imgaArray = @[@"jkgl96",@"jkgl97",@"jkgl98",@"jkgl99"];
+    mineOneV.imgaArray = @[@"jkgl97",@"jkgl99"];
     mineOneV.delegate = self;
     mineOneV.nameArray = arrone;
     mineOneV.dataArray = arrone;
@@ -229,7 +229,7 @@
     
     ALCMineViewOne * mineTwoV = [[ALCMineViewOne alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(mineOneV.frame) + 25, ScreenW - 30, 100)];
     mineTwoV.tag = 101;
-    mineTwoV.imgaArray =  @[@"jkgl100",@"jkgl101",@"jkgl102",@"jkgl103"];
+    mineTwoV.imgaArray =  @[@"jkgl100",@"jkgl102",@"jkgl103"];
     mineTwoV.nameArray = arrtwo;
     mineTwoV.delegate = self;
     mineTwoV.dataArray = arrtwo;
@@ -409,7 +409,7 @@
             UILabel * dorL = [[UILabel alloc] initWithFrame:CGRectMake(self.scrollView.mj_w/2 - 70-40+ (ScreenW - 30) * i, CGRectGetMaxY(dorLB.frame), 70,20)];
             dorL.textColor= CharacterBlack100;
             dorL.textAlignment = NSTextAlignmentCenter;
-            dorL.text = @"我的医生";
+            dorL.text = @"我的教师";
             dorL.font = kFont(14);
             [self.scrollView addSubview:dorL];
             
@@ -576,16 +576,29 @@
         
         //点击的是我的预约模块
         if (index == 0) {
-            //我的预约
-            ACLMineAppointVC * vc =[[ACLMineAppointVC alloc] init];
+            
+            //我的咨询
+                       ALCMineReferTVC * vc =[[ALCMineReferTVC alloc] initWithTableViewStyle:(UITableViewStyleGrouped)];
+                       vc.hidesBottomBarWhenPushed = YES;
+                       [self.navigationController pushViewController:vc animated:YES];
+            
+//            //我的预约
+//            ACLMineAppointVC * vc =[[ACLMineAppointVC alloc] init];
+//            vc.hidesBottomBarWhenPushed = YES;
+//            [self.navigationController pushViewController:vc animated:YES];
+            
+        }else if (index == 1) {
+            
+            
+            //我的收藏
+            ACLMineColletFarterVC * vc =[[ACLMineColletFarterVC alloc] init];
             vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
             
-        }else if (index == 1) {
             //我的咨询
-            ALCMineReferTVC * vc =[[ALCMineReferTVC alloc] initWithTableViewStyle:(UITableViewStyleGrouped)];
-            vc.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:vc animated:YES];
+//            ALCMineReferTVC * vc =[[ALCMineReferTVC alloc] initWithTableViewStyle:(UITableViewStyleGrouped)];
+//            vc.hidesBottomBarWhenPushed = YES;
+//            [self.navigationController pushViewController:vc animated:YES];
             
         }else if (index == 2) {
             

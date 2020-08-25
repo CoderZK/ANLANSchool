@@ -162,6 +162,8 @@
         return cell;
         
     }else {
+        
+        //自己发的 
         ALCChartMessageTwoCell * cell =[tableView dequeueReusableCellWithIdentifier:@"ALCChartMessageTwoCell" forIndexPath:indexPath];
         if (indexPath.row == 0) {
             cell.timeStr = @"";

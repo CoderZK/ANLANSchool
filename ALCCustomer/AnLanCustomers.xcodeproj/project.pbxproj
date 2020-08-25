@@ -2698,10 +2698,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "AnLanCustomers/安澜客户端.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: guang yang (445VT9QPK6)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_TEAM = JC4A2LS9A4;
+				DEVELOPMENT_TEAM = U3896XJ77N;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AnLanCustomers/3rd",
@@ -2719,10 +2719,10 @@
 					"$(PROJECT_DIR)/AnLanCustomers/3rd",
 					"$(PROJECT_DIR)/AnLanCustomers/3rd/UMessage_Sdk_1.3.0",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jkgl.anlanCC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jkgl.anlanCC.zxx;
 				PRODUCT_NAME = "健康学校";
 				PROVISIONING_PROFILE = "3bdcf4b3-e396-4d7a-ab2b-739f2269ddaa";
-				PROVISIONING_PROFILE_SPECIFIER = comxxxxx;
+				PROVISIONING_PROFILE_SPECIFIER = comjiankangxxxx;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;

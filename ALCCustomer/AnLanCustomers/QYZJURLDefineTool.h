@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 //#define URLOne @"http://mobile.qunyanzhujia.com:8098/qyzj/"
 //测试
 //#define URLOne @"http://192.168.0.38/jkgl/"
-#define URLOne @"http://47.101.212.182/jkgl/"
+#define URLOne @"http://221.195.217.162:5673/jkgl/"
 
 ////图片地址
 #define QiNiuImgURL @"http://web.qunyanzhujia.com/"

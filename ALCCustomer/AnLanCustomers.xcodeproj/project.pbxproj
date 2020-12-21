@@ -222,13 +222,13 @@
 		58432E872463A97700900393 /* ALCChartMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58432E862463A97700900393 /* ALCChartMessageCell.m */; };
 		58432E8A2463AA3700900393 /* ALCChartMessageTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58432E892463AA3700900393 /* ALCChartMessageTwoCell.m */; };
 		5843ED1B2484A40C0022E96B /* ALCTuiJianWenZhangTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5843ED1A2484A40C0022E96B /* ALCTuiJianWenZhangTVC.m */; };
-		5843ED412484ADB20022E96B /* LxmPushModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5843ED2B2484ADB20022E96B /* LxmPushModel.m */; };
 		5844FDDE2435965A0056B1A8 /* ALCTiZHongLineTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5844FDDD2435965A0056B1A8 /* ALCTiZHongLineTVC.m */; };
 		5844FDE12435B46F0056B1A8 /* ACLHeightLineHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5844FDE02435B46F0056B1A8 /* ACLHeightLineHeadView.m */; };
 		5844FDE42435E2660056B1A8 /* ALCMineJianKangDangAnHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5844FDE32435E2660056B1A8 /* ALCMineJianKangDangAnHeadView.m */; };
 		5847316724977750005C7077 /* ALCZhuFaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5847316624977750005C7077 /* ALCZhuFaVC.m */; };
 		585097BD247E68C400F6D7C4 /* ALCChartMessageThreeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 585097BC247E68C400F6D7C4 /* ALCChartMessageThreeCell.m */; };
 		5867471624590A1D00D86815 /* ALCSearchHospitalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5867471524590A1D00D86815 /* ALCSearchHospitalView.m */; };
+		587ED0F925230D9300662F7C /* LxmPushModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 587ED0F725230D9300662F7C /* LxmPushModel.m */; };
 		5886EDF724207F970039BC4F /* CIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5886EDBC24207F910039BC4F /* CIImage+Extension.m */; };
 		5886EDF824207F970039BC4F /* SelectTimeV.m in Sources */ = {isa = PBXBuildFile; fileRef = 5886EDBE24207F910039BC4F /* SelectTimeV.m */; };
 		5886EDF924207F970039BC4F /* zkLunBoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5886EDC124207F910039BC4F /* zkLunBoCell.m */; };
@@ -811,8 +811,6 @@
 		58432E892463AA3700900393 /* ALCChartMessageTwoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALCChartMessageTwoCell.m; sourceTree = "<group>"; };
 		5843ED192484A40C0022E96B /* ALCTuiJianWenZhangTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALCTuiJianWenZhangTVC.h; sourceTree = "<group>"; };
 		5843ED1A2484A40C0022E96B /* ALCTuiJianWenZhangTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALCTuiJianWenZhangTVC.m; sourceTree = "<group>"; };
-		5843ED2B2484ADB20022E96B /* LxmPushModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LxmPushModel.m; sourceTree = "<group>"; };
-		5843ED402484ADB20022E96B /* LxmPushModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LxmPushModel.h; sourceTree = "<group>"; };
 		5844FDDC2435965A0056B1A8 /* ALCTiZHongLineTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALCTiZHongLineTVC.h; sourceTree = "<group>"; };
 		5844FDDD2435965A0056B1A8 /* ALCTiZHongLineTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALCTiZHongLineTVC.m; sourceTree = "<group>"; };
 		5844FDDF2435B46F0056B1A8 /* ACLHeightLineHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACLHeightLineHeadView.h; sourceTree = "<group>"; };
@@ -825,6 +823,8 @@
 		585097BC247E68C400F6D7C4 /* ALCChartMessageThreeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALCChartMessageThreeCell.m; sourceTree = "<group>"; };
 		5867471424590A1D00D86815 /* ALCSearchHospitalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALCSearchHospitalView.h; sourceTree = "<group>"; };
 		5867471524590A1D00D86815 /* ALCSearchHospitalView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALCSearchHospitalView.m; sourceTree = "<group>"; };
+		587ED0F725230D9300662F7C /* LxmPushModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LxmPushModel.m; sourceTree = "<group>"; };
+		587ED0F825230D9300662F7C /* LxmPushModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LxmPushModel.h; sourceTree = "<group>"; };
 		5886EDBB24207F910039BC4F /* PublicFuntionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicFuntionTool.h; sourceTree = "<group>"; };
 		5886EDBC24207F910039BC4F /* CIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CIImage+Extension.m"; sourceTree = "<group>"; };
 		5886EDBE24207F910039BC4F /* SelectTimeV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTimeV.m; sourceTree = "<group>"; };
@@ -1048,8 +1048,8 @@
 				337F3E8E20E9FF3500C5526A /* 我的 */,
 				337F3E5920E9FE3B00C5526A /* AppDelegate.h */,
 				337F3E5A20E9FE3B00C5526A /* AppDelegate.m */,
-				5843ED402484ADB20022E96B /* LxmPushModel.h */,
-				5843ED2B2484ADB20022E96B /* LxmPushModel.m */,
+				587ED0F825230D9300662F7C /* LxmPushModel.h */,
+				587ED0F725230D9300662F7C /* LxmPushModel.m */,
 				58252FA524558B5F0084586E /* HHHHVC.h */,
 				58252FA624558B5F0084586E /* HHHHVC.m */,
 				337F3E5C20E9FE3C00C5526A /* ViewController.h */,
@@ -2365,7 +2365,6 @@
 				5886EE0724207F970039BC4F /* MXALAsset.m in Sources */,
 				337F3EAA20EA014600C5526A /* BaseViewController.m in Sources */,
 				583B8E052462AC9F0027F77C /* ALCMianAllAppiontmentDocCell.m in Sources */,
-				5843ED412484ADB20022E96B /* LxmPushModel.m in Sources */,
 				583E86E424665A5E00CFA078 /* ALCbindPhoneVC.m in Sources */,
 				583B2A5A2428518A0037CF47 /* ALCSettingMiMaVC.m in Sources */,
 				58BA6CBB2420A5890023692B /* ALCRegisterVC.m in Sources */,
@@ -2396,6 +2395,7 @@
 				5836D0372421E9EF0067B440 /* ALCUserGuideOneVC.m in Sources */,
 				5837C4F52429B358004D731D /* ACLHeadOrFootView.m in Sources */,
 				583B8DFC2462ABBD0027F77C /* ALCMineAllAppiontmentDocTVC.m in Sources */,
+				587ED0F925230D9300662F7C /* LxmPushModel.m in Sources */,
 				58395040242B2F1D005DFCD6 /* ALCProjectDetailTVC.m in Sources */,
 				582BDF91242C798600D17C57 /* ALCJianKangRiZhiDetailCell.m in Sources */,
 				582BDFAB242CA97100D17C57 /* XMCalendarTool.m in Sources */,
@@ -2719,10 +2719,10 @@
 					"$(PROJECT_DIR)/AnLanCustomers/3rd",
 					"$(PROJECT_DIR)/AnLanCustomers/3rd/UMessage_Sdk_1.3.0",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jkgl.anlanCC.zxx;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jkgl.anlanCC;
 				PRODUCT_NAME = "健康学校";
 				PROVISIONING_PROFILE = "3bdcf4b3-e396-4d7a-ab2b-739f2269ddaa";
-				PROVISIONING_PROFILE_SPECIFIER = comjiankangxxxx;
+				PROVISIONING_PROFILE_SPECIFIER = jkcomcom;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
